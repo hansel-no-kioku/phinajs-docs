@@ -1,0 +1,23 @@
+{
+  "name": "phinajs-info",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "box2dweb": "^2.1.0-b",
+    "livescript": "^1.5.0",
+    "npm-run-all": "^4.0.0",
+    "rimraf": "^2.5.4",
+    "write": "^0.3.2"
+  },
+  "scripts": {
+    "install": "npm run install:bower",
+    "build": "run-p build:* ",
+    "clean": "rimraf ./docs",
+    "rebuild": "run-s clean build",
+    "install:bower": "bower install",
+    "build:class-list": "lsc ./scripts/make-class-list",
+    "build:class-detail": "lsc ./scripts/make-class-detail"
+  }
+}
