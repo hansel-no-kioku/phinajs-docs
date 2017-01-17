@@ -1,10 +1,10 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.util.Grid
 
 super class : none
 
 ## Properties
-
-### Class properties
 
 
 ### Instance properties (own)
@@ -14,71 +14,70 @@ super class : none
 * loop : Boolean
 * offset : Number
 
-### Instance properties (inherited)
-
 
 ## Methods
-
-### Class methods
 
 
 ### Instance methods (own)
 
-* init
-* span
-* unit
-* center
-
-### Instance methods (inherited)
+* [init](#instance_init)
+* [span](#instance_span)
+* [unit](#instance_unit)
+* [center](#instance_center)
 
 
-## Sources
 
-* init
-  ```javascript
-  function () {
-        if (typeof arguments[0] === 'object') {
-          var param = arguments[0];
-          var width = param.width || 640;
-          var columns = param.columns || 12;
-          var loop = param.loop || false;
-          var offset = param.offset || 0;
-        }
-        else {
-          var width   = arguments[0] || 640;
-          var columns = arguments[1] || 12;
-          var loop    = arguments[2] || false;
-          var offset = arguments[3] || 0;
-        }
-  
-        this.width = width;
-        this.columns = columns;
-        this.loop = loop;
-        this.offset = offset;
-        this.unitWidth = this.width/this.columns;
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function () {
+      if (typeof arguments[0] === 'object') {
+        var param = arguments[0];
+        var width = param.width || 640;
+        var columns = param.columns || 12;
+        var loop = param.loop || false;
+        var offset = param.offset || 0;
       }
-  ```
-* span
-  ```javascript
-  function (index) {
-        if (this.loop) {
-          index += this.columns;
-          index %= this.columns;
-        }
-        return this.unitWidth * index + this.offset;
+      else {
+        var width   = arguments[0] || 640;
+        var columns = arguments[1] || 12;
+        var loop    = arguments[2] || false;
+        var offset = arguments[3] || 0;
       }
-  ```
-* unit
-  ```javascript
-  function () {
-        return this.unitWidth;
+
+      this.width = width;
+      this.columns = columns;
+      this.loop = loop;
+      this.offset = offset;
+      this.unitWidth = this.width/this.columns;
+    }
+```
+
+### <a name="instance_span"></a>span
+```javascript
+function (index) {
+      if (this.loop) {
+        index += this.columns;
+        index %= this.columns;
       }
-  ```
-* center
-  ```javascript
-  function (offset) {
-        var index = offset || 0;
-        return (this.width/2) + (this.unitWidth * index);
-      }
-  ```
+      return this.unitWidth * index + this.offset;
+    }
+```
+
+### <a name="instance_unit"></a>unit
+```javascript
+function () {
+      return this.unitWidth;
+    }
+```
+
+### <a name="instance_center"></a>center
+```javascript
+function (offset) {
+      var index = offset || 0;
+      return (this.width/2) + (this.unitWidth * index);
+    }
+```
+
 

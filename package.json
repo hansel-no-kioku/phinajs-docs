@@ -1,7 +1,6 @@
 {
-  "name": "phinajs-info",
+  "name": "phinajs-doc",
   "version": "0.0.1",
-  "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.8.0",

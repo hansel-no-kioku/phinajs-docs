@@ -1,3 +1,5 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.game.ResultScene
 
 super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
@@ -6,158 +8,166 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 
 ### Class properties
 
-* defaults : Object
+* defaults : 
+  * score : 16
+  * message : 'this is phina.js project.'
+  * hashtags : 'phina_js,game,javascript'
+  * url : undefined
+  * width : 640
+  * height : 960
+  * fontColor : 'white'
+  * backgroundColor : 'hsl(200, 80%, 64%)'
+  * backgroundImage : ''
 
-### Instance properties (own)
 
 
 ### Instance properties (inherited)
 
-* parent : Null
-* children : Null
-* awake : Boolean
+* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 
 ## Methods
-
-### Class methods
 
 
 ### Instance methods (own)
 
-* init
+* [init](#instance_init)
 
 ### Instance methods (inherited)
 
-* hitTest
-* exit
-* addChild
-* addChildTo
-* addChildAt
-* getChildAt
-* getChildByName
-* getChildIndex
-* getParent
-* getRoot
-* removeChild
-* remove
-* isAwake
-* wakeUp
-* sleep
-* fromJSON
-* toJSON
-* on
-* off
-* fire
-* flare
-* one
-* has
-* clear
+* [hitTest](phina.display.DisplayScene.md#instance_hitTest)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* [exit](phina.app.Scene.md#instance_exit)&ensp;&ensp;(from [phina.app.Scene](phina.app.Scene.md))
+* [addChild](phina.app.Element.md#instance_addChild)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [addChildTo](phina.app.Element.md#instance_addChildTo)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [addChildAt](phina.app.Element.md#instance_addChildAt)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getChildAt](phina.app.Element.md#instance_getChildAt)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getChildByName](phina.app.Element.md#instance_getChildByName)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getChildIndex](phina.app.Element.md#instance_getChildIndex)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getParent](phina.app.Element.md#instance_getParent)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getRoot](phina.app.Element.md#instance_getRoot)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [removeChild](phina.app.Element.md#instance_removeChild)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [remove](phina.app.Element.md#instance_remove)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [isAwake](phina.app.Element.md#instance_isAwake)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [wakeUp](phina.app.Element.md#instance_wakeUp)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [sleep](phina.app.Element.md#instance_sleep)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [fromJSON](phina.app.Element.md#instance_fromJSON)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [toJSON](phina.app.Element.md#instance_toJSON)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [on](phina.util.EventDispatcher.md#instance_on)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [off](phina.util.EventDispatcher.md#instance_off)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [fire](phina.util.EventDispatcher.md#instance_fire)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [flare](phina.util.EventDispatcher.md#instance_flare)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [one](phina.util.EventDispatcher.md#instance_one)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [has](phina.util.EventDispatcher.md#instance_has)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [clear](phina.util.EventDispatcher.md#instance_clear)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
-## Sources
 
-* init
-  ```javascript
-  function (params) {
-        this.superInit(params);
-  
-        params = ({}).$safe(params, phina.game.ResultScene.defaults);
-  
-        var message = params.message.format(params);
-  
-        this.backgroundColor = params.backgroundColor;
-  
-        this.fromJSON({
-          children: {
-            scoreText: {
-              className: 'phina.display.Label',
-              arguments: {
-                text: 'score',
-                fill: params.fontColor,
-                stroke: null,
-                fontSize: 48,
-              },
-              x: this.gridX.span(8),
-              y: this.gridY.span(4),
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function (params) {
+      this.superInit(params);
+
+      params = ({}).$safe(params, phina.game.ResultScene.defaults);
+
+      var message = params.message.format(params);
+
+      this.backgroundColor = params.backgroundColor;
+
+      this.fromJSON({
+        children: {
+          scoreText: {
+            className: 'phina.display.Label',
+            arguments: {
+              text: 'score',
+              fill: params.fontColor,
+              stroke: null,
+              fontSize: 48,
             },
-            scoreLabel: {
-              className: 'phina.display.Label',
-              arguments: {
-                text: params.score+'',
-                fill: params.fontColor,
-                stroke: null,
-                fontSize: 72,
-              },
-              x: this.gridX.span(8),
-              y: this.gridY.span(6),
+            x: this.gridX.span(8),
+            y: this.gridY.span(4),
+          },
+          scoreLabel: {
+            className: 'phina.display.Label',
+            arguments: {
+              text: params.score+'',
+              fill: params.fontColor,
+              stroke: null,
+              fontSize: 72,
             },
-  
-            messageLabel: {
-              className: 'phina.display.Label',
-              arguments: {
-                text: message,
-                fill: params.fontColor,
-                stroke: null,
-                fontSize: 32,
-              },
-              x: this.gridX.center(),
-              y: this.gridY.span(9),
+            x: this.gridX.span(8),
+            y: this.gridY.span(6),
+          },
+
+          messageLabel: {
+            className: 'phina.display.Label',
+            arguments: {
+              text: message,
+              fill: params.fontColor,
+              stroke: null,
+              fontSize: 32,
             },
-  
-            shareButton: {
-              className: 'phina.ui.Button',
-              arguments: [{
-                text: '★',
-                width: 128,
-                height: 128,
-                fontColor: params.fontColor,
-                fontSize: 50,
-                cornerRadius: 64,
-                fill: 'rgba(240, 240, 240, 0.5)',
-                // stroke: '#aaa',
-                // strokeWidth: 2,
-              }],
-              x: this.gridX.center(-3),
-              y: this.gridY.span(12),
-            },
-            playButton: {
-              className: 'phina.ui.Button',
-              arguments: [{
-                text: '▶',
-                width: 128,
-                height: 128,
-                fontColor: params.fontColor,
-                fontSize: 50,
-                cornerRadius: 64,
-                fill: 'rgba(240, 240, 240, 0.5)',
-                // stroke: '#aaa',
-                // strokeWidth: 2,
-              }],
-              x: this.gridX.center(3),
-              y: this.gridY.span(12),
-  
-              interactive: true,
-              onpush: function() {
-                this.exit();
-              }.bind(this),
-            },
-          }
-        });
-  
-        if (params.exitType === 'touch') {
-          this.on('pointend', function() {
-            this.exit();
-          });
+            x: this.gridX.center(),
+            y: this.gridY.span(9),
+          },
+
+          shareButton: {
+            className: 'phina.ui.Button',
+            arguments: [{
+              text: '★',
+              width: 128,
+              height: 128,
+              fontColor: params.fontColor,
+              fontSize: 50,
+              cornerRadius: 64,
+              fill: 'rgba(240, 240, 240, 0.5)',
+              // stroke: '#aaa',
+              // strokeWidth: 2,
+            }],
+            x: this.gridX.center(-3),
+            y: this.gridY.span(12),
+          },
+          playButton: {
+            className: 'phina.ui.Button',
+            arguments: [{
+              text: '▶',
+              width: 128,
+              height: 128,
+              fontColor: params.fontColor,
+              fontSize: 50,
+              cornerRadius: 64,
+              fill: 'rgba(240, 240, 240, 0.5)',
+              // stroke: '#aaa',
+              // strokeWidth: 2,
+            }],
+            x: this.gridX.center(3),
+            y: this.gridY.span(12),
+
+            interactive: true,
+            onpush: function() {
+              this.exit();
+            }.bind(this),
+          },
         }
-  
-        this.shareButton.onclick = function() {
-          var text = 'Score: {0}\n{1}'.format(params.score, message);
-          var url = phina.social.Twitter.createURL({
-            text: text,
-            hashtags: params.hashtags,
-            url: params.url,
-          });
-          window.open(url, 'share window', 'width=480, height=320');
-        };
+      });
+
+      if (params.exitType === 'touch') {
+        this.on('pointend', function() {
+          this.exit();
+        });
       }
-  ```
+
+      this.shareButton.onclick = function() {
+        var text = 'Score: {0}\n{1}'.format(params.score, message);
+        var url = phina.social.Twitter.createURL({
+          text: text,
+          hashtags: params.hashtags,
+          url: params.url,
+        });
+        window.open(url, 'share window', 'width=480, height=320');
+      };
+    }
+```
+
 

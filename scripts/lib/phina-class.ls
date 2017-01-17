@@ -2,10 +2,14 @@
 # Phina class
 
 global.Box2D = require \box2dweb
+global.document = require \./dummy-document
+global.CanvasRenderingContext2D = {}
+global.AudioContext = ->
+global.addEventListener = ->
+global.window = global
 
 require! {
   \prelude-ls : {is-type, filter, fold, concat-map, values}
-  \../bower_components/phina.js
 }
 
 # String -> Object -> [a]
@@ -30,11 +34,6 @@ make-class-structure = fold struct-classes, {}
 # phina -> [Class]
 make-class-list = (concat-map (select-type \Function )) . (select-type \Object)
 
-# static values
-classes = make-class-list phina
-structure = make-class-structure classes
-
 export
-  get-class-list = -> classes
-  get-class-structure = -> structure
-  get-version = -> phina.VERSION
+  get-class-list = make-class-list
+  get-class-structure = make-class-structure . make-class-list

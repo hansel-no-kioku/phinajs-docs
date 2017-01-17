@@ -1,10 +1,10 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.geom.Vector3
 
 super class : none
 
 ## Properties
-
-### Class properties
 
 
 ### Instance properties (own)
@@ -13,29 +13,25 @@ super class : none
 * y : Number
 * z : Number
 
-### Instance properties (inherited)
-
 
 ## Methods
-
-### Class methods
 
 
 ### Instance methods (own)
 
-* init
-
-### Instance methods (inherited)
+* [init](#instance_init)
 
 
-## Sources
 
-* init
-  ```javascript
-  function (x, y, z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-      }
-  ```
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function (x, y, z) {
+      this.x = x;
+      this.y = y;
+      this.z = z;
+    }
+```
+
 

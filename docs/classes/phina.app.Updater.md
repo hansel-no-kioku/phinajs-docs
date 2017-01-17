@@ -1,43 +1,38 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.app.Updater
 
 super class : none
 
 ## Properties
 
-### Class properties
 
-
-### Instance properties (own)
-
-
-### Instance properties (inherited)
 
 
 ## Methods
 
-### Class methods
-
 
 ### Instance methods (own)
 
-* init
-* update
-
-### Instance methods (inherited)
+* [init](#instance_init)
+* [update](#instance_update)
 
 
-## Sources
 
-* init
-  ```javascript
-  function (app) {
-        this.app = app;
-      }
-  ```
-* update
-  ```javascript
-  function (root) {
-        this._updateElement(root);
-      }
-  ```
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function (app) {
+      this.app = app;
+    }
+```
+
+### <a name="instance_update"></a>update
+```javascript
+function (root) {
+      this._updateElement(root);
+    }
+```
+
 

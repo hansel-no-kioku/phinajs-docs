@@ -1,6 +1,6 @@
-# phina.js クラス一覧
+[Top](../README.md) >
 
-version: 0.2.0
+# phina.js ver.0.2.0 Class List
 
 * [phina.geom.Vector2](classes/phina.geom.Vector2.md)
 * [phina.geom.Vector3](classes/phina.geom.Vector3.md)
@@ -88,4 +88,4 @@ version: 0.2.0
 * [phina.display.CanvasRenderer](classes/phina.display.CanvasRenderer.md)
 * [phina.social.Twitter](classes/phina.social.Twitter.md)
 
-※ Box2D 読み込み時
+※ Box2D is option.

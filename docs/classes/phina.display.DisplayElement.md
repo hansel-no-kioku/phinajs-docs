@@ -1,10 +1,10 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.display.DisplayElement
 
 super class : [phina.app.Object2D](phina.app.Object2D.md)
 
 ## Properties
-
-### Class properties
 
 
 ### Instance properties (own)
@@ -16,102 +16,105 @@ super class : [phina.app.Object2D](phina.app.Object2D.md)
 
 ### Instance properties (inherited)
 
-* position : Null
-* rotation : Number
-* scale : Null
-* origin : Null
-* parent : Null
-* children : Null
-* awake : Boolean
+* position : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* rotation : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* scale : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* origin : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 
 ## Methods
-
-### Class methods
 
 
 ### Instance methods (own)
 
-* init
-* setVisible
-* show
-* hide
+* [init](#instance_init)
+* [setVisible](#instance_setVisible)
+* [show](#instance_show)
+* [hide](#instance_hide)
 
 ### Instance methods (inherited)
 
-* hitTest
-* hitTestRect
-* hitTestCircle
-* hitTestElement
-* globalToLocal
-* setInteractive
-* setX
-* setY
-* setPosition
-* setRotation
-* setScale
-* setOrigin
-* setWidth
-* setHeight
-* setSize
-* setBoundingType
-* moveTo
-* moveBy
-* addChild
-* addChildTo
-* addChildAt
-* getChildAt
-* getChildByName
-* getChildIndex
-* getParent
-* getRoot
-* removeChild
-* remove
-* isAwake
-* wakeUp
-* sleep
-* fromJSON
-* toJSON
-* on
-* off
-* fire
-* flare
-* one
-* has
-* clear
+* [hitTest](phina.app.Object2D.md#instance_hitTest)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [hitTestRect](phina.app.Object2D.md#instance_hitTestRect)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [hitTestCircle](phina.app.Object2D.md#instance_hitTestCircle)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [hitTestElement](phina.app.Object2D.md#instance_hitTestElement)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [globalToLocal](phina.app.Object2D.md#instance_globalToLocal)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setInteractive](phina.app.Object2D.md#instance_setInteractive)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setX](phina.app.Object2D.md#instance_setX)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setY](phina.app.Object2D.md#instance_setY)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setPosition](phina.app.Object2D.md#instance_setPosition)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setRotation](phina.app.Object2D.md#instance_setRotation)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setScale](phina.app.Object2D.md#instance_setScale)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setOrigin](phina.app.Object2D.md#instance_setOrigin)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setWidth](phina.app.Object2D.md#instance_setWidth)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setHeight](phina.app.Object2D.md#instance_setHeight)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setSize](phina.app.Object2D.md#instance_setSize)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [setBoundingType](phina.app.Object2D.md#instance_setBoundingType)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [moveTo](phina.app.Object2D.md#instance_moveTo)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [moveBy](phina.app.Object2D.md#instance_moveBy)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* [addChild](phina.app.Element.md#instance_addChild)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [addChildTo](phina.app.Element.md#instance_addChildTo)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [addChildAt](phina.app.Element.md#instance_addChildAt)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getChildAt](phina.app.Element.md#instance_getChildAt)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getChildByName](phina.app.Element.md#instance_getChildByName)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getChildIndex](phina.app.Element.md#instance_getChildIndex)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getParent](phina.app.Element.md#instance_getParent)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [getRoot](phina.app.Element.md#instance_getRoot)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [removeChild](phina.app.Element.md#instance_removeChild)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [remove](phina.app.Element.md#instance_remove)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [isAwake](phina.app.Element.md#instance_isAwake)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [wakeUp](phina.app.Element.md#instance_wakeUp)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [sleep](phina.app.Element.md#instance_sleep)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [fromJSON](phina.app.Element.md#instance_fromJSON)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [toJSON](phina.app.Element.md#instance_toJSON)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [on](phina.util.EventDispatcher.md#instance_on)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [off](phina.util.EventDispatcher.md#instance_off)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [fire](phina.util.EventDispatcher.md#instance_fire)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [flare](phina.util.EventDispatcher.md#instance_flare)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [one](phina.util.EventDispatcher.md#instance_one)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [has](phina.util.EventDispatcher.md#instance_has)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [clear](phina.util.EventDispatcher.md#instance_clear)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
-## Sources
 
-* init
-  ```javascript
-  function (options) {
-        options = (options || {});
-        
-        this.superInit(options);
-  
-        this.visible = true;
-        this.alpha = 1.0;
-        this._worldAlpha = 1.0;
-      }
-  ```
-* setVisible
-  ```javascript
-  function (flag) {
-        this.visible = flag;
-        return this;
-      }
-  ```
-* show
-  ```javascript
-  function () {
-        this.visible = true;
-        return this;
-      }
-  ```
-* hide
-  ```javascript
-  function () {
-        this.visible = false;
-        return this;
-      }
-  ```
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function (options) {
+      options = (options || {});
+      
+      this.superInit(options);
+
+      this.visible = true;
+      this.alpha = 1.0;
+      this._worldAlpha = 1.0;
+    }
+```
+
+### <a name="instance_setVisible"></a>setVisible
+```javascript
+function (flag) {
+      this.visible = flag;
+      return this;
+    }
+```
+
+### <a name="instance_show"></a>show
+```javascript
+function () {
+      this.visible = true;
+      return this;
+    }
+```
+
+### <a name="instance_hide"></a>hide
+```javascript
+function () {
+      this.visible = false;
+      return this;
+    }
+```
+
 

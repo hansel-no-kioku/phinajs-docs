@@ -4,21 +4,25 @@
 require! {
   \prelude-ls : {fold, obj-to-pairs}
   write
-  \./phina-class : {get-class-structure, get-version}
+  \./lib/phina-class : {get-class-structure}
+  \../bower_components/phina.js   # Use Object.prototype.accessor
 }
 
 dest = \./docs/class-list.md
 
+structure = get-class-structure phina
+
+# Number -> Object -> Object
 make-class-list = (depth, node) ->
-  f = fold (str, pair) ->
+  f = fold (str, [k, v]) ->
     str +
-      '  ' * depth +
-      "* [#{pair.0}](classes/#{pair.0}.md)\n" +
-      make-class-list depth + 1 pair.1
+    '  ' * depth + "* [#{k}](classes/#{k}.md)\n" +
+    make-class-list depth + 1 v
   f '' obj-to-pairs node
 
+# IO ()
 write dest,
-  '# phina.js クラス一覧\n\n' +
-  "version: #{get-version!}\n\n" +
-  (make-class-list 0, get-class-structure!) + \\n +
-  '※ Box2D 読み込み時\n'
+  '[Top](../README.md) >\n\n' +
+  "# phina.js ver.#{phina.VERSION} Class List\n\n" +
+  (make-class-list 0, structure) + \\n +
+  '※ Box2D is option.\n'

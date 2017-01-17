@@ -1,3 +1,5 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.social.Twitter
 
 super class : none
@@ -7,32 +9,57 @@ super class : none
 ### Class properties
 
 * baseURL : String
-* defaults : Object
+* defaults : 
+  * text : 'Hello, world!'
+  * hashtags : 'javascript,phina'
+  * url : undefined
 
-### Instance properties (own)
 
-
-### Instance properties (inherited)
 
 
 ## Methods
 
 ### Class methods
 
-* createURL
+* [createURL](#class_createURL)
 
 ### Instance methods (own)
 
-* init
-
-### Instance methods (inherited)
+* [init](#instance_init)
 
 
-## Sources
+## Source code of methods (class)
 
-* init
-  ```javascript
-  function (options) {
+### <a name="class_createURL"></a>createURL
+```javascript
+function (options) {
+        options = (options || {}).$safe(this.defaults);
+
+        var queries = [];
+        var euc = encodeURIComponent;
+        options.forIn(function(key, value) {
+          var str = key + '=' + euc(value);
+          queries.push(str);
+        });
+
+        var url = '{baseURL}/{type}?{query}'.format({
+          baseURL: this.baseURL,
+          // type: options.type,
+          type: 'tweet',
+          query: queries.join('&'),
+        });
+
+        return url;
       }
-  ```
+```
+
+
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function (options) {
+    }
+```
+
 

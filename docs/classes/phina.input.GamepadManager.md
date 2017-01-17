@@ -1,3 +1,5 @@
+[TOP](../../README.md) > [Class List](../class-list.md) >
+
 # phina.input.GamepadManager
 
 super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
@@ -10,128 +12,130 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
-* gamepads : Null
-
-### Instance properties (inherited)
+* gamepads : {}
 
 
 ## Methods
 
-### Class methods
-
 
 ### Instance methods (own)
 
-* init
-* update
-* get
-* dispose
-* isConnected
+* [init](#instance_init)
+* [update](#instance_update)
+* [get](#instance_get)
+* [dispose](#instance_dispose)
+* [isConnected](#instance_isConnected)
 
 ### Instance methods (inherited)
 
-* on
-* off
-* fire
-* flare
-* one
-* has
-* clear
+* [on](phina.util.EventDispatcher.md#instance_on)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [off](phina.util.EventDispatcher.md#instance_off)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [fire](phina.util.EventDispatcher.md#instance_fire)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [flare](phina.util.EventDispatcher.md#instance_flare)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [one](phina.util.EventDispatcher.md#instance_one)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [has](phina.util.EventDispatcher.md#instance_has)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [clear](phina.util.EventDispatcher.md#instance_clear)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
-## Sources
 
-* init
-  ```javascript
-  function () {
-        this.superInit();
-  
-        this.gamepads = {};
-        this._created = [];
-        this._rawgamepads = [];
-  
-        this._prevTimestamps = {};
-  
-        this._getGamepads = null;
-        var navigator = phina.global.navigator;
-        if (navigator && navigator.getGamepads) {
-          this._getGamepads = navigator.getGamepads.bind(navigator);
-        } else if (navigator && navigator.webkitGetGamepads) {
-          this._getGamepads = navigator.webkitGetGamepads.bind(navigator);
-        } else {
-          this._getGamepads = function() {};
+## Source code of methods (instance)
+
+### <a name="instance_init"></a>init
+```javascript
+function () {
+      this.superInit();
+
+      this.gamepads = {};
+      this._created = [];
+      this._rawgamepads = [];
+
+      this._prevTimestamps = {};
+
+      this._getGamepads = null;
+      var navigator = phina.global.navigator;
+      if (navigator && navigator.getGamepads) {
+        this._getGamepads = navigator.getGamepads.bind(navigator);
+      } else if (navigator && navigator.webkitGetGamepads) {
+        this._getGamepads = navigator.webkitGetGamepads.bind(navigator);
+      } else {
+        this._getGamepads = function() {};
+      }
+
+      phina.global.addEventListener('gamepadconnected', function(e) {
+        var gamepad = this.get(e.gamepad.index);
+        gamepad.connected = true;
+        this.flare('connected', {
+          gamepad: gamepad,
+        });
+      }.bind(this));
+
+      phina.global.addEventListener('gamepaddisconnected', function(e) {
+        var gamepad = this.get(e.gamepad.index);
+        gamepad.connected = false;
+        this.flare('disconnected', {
+          gamepad: gamepad,
+        });
+      }.bind(this));
+    }
+```
+
+### <a name="instance_update"></a>update
+```javascript
+function () {
+      this._poll();
+
+      for (var i = 0, end = this._created.length; i < end; i++) {
+        var index = this._created[i];
+        var rawgamepad = this._rawgamepads[index];
+
+        if (!rawgamepad) {
+          continue;
         }
-  
-        phina.global.addEventListener('gamepadconnected', function(e) {
-          var gamepad = this.get(e.gamepad.index);
-          gamepad.connected = true;
-          this.flare('connected', {
-            gamepad: gamepad,
-          });
-        }.bind(this));
-  
-        phina.global.addEventListener('gamepaddisconnected', function(e) {
-          var gamepad = this.get(e.gamepad.index);
-          gamepad.connected = false;
-          this.flare('disconnected', {
-            gamepad: gamepad,
-          });
-        }.bind(this));
-      }
-  ```
-* update
-  ```javascript
-  function () {
-        this._poll();
-  
-        for (var i = 0, end = this._created.length; i < end; i++) {
-          var index = this._created[i];
-          var rawgamepad = this._rawgamepads[index];
-  
-          if (!rawgamepad) {
-            continue;
-          }
-  
-          if (rawgamepad.timestamp && (rawgamepad.timestamp === this._prevTimestamps[i])) {
-            this.gamepads[index]._updateStateEmpty();
-            continue;
-          }
-  
-          this._prevTimestamps[i] = rawgamepad.timestamp;
-          this.gamepads[index]._updateState(rawgamepad);
+
+        if (rawgamepad.timestamp && (rawgamepad.timestamp === this._prevTimestamps[i])) {
+          this.gamepads[index]._updateStateEmpty();
+          continue;
         }
+
+        this._prevTimestamps[i] = rawgamepad.timestamp;
+        this.gamepads[index]._updateState(rawgamepad);
       }
-  ```
-* get
-  ```javascript
-  function (index) {
-        index = index || 0;
-  
-        if (!this.gamepads[index]) {
-          this._created.push(index);
-          this.gamepads[index] = phina.input.Gamepad(index);
-        }
-  
-        return this.gamepads[index];
+    }
+```
+
+### <a name="instance_get"></a>get
+```javascript
+function (index) {
+      index = index || 0;
+
+      if (!this.gamepads[index]) {
+        this._created.push(index);
+        this.gamepads[index] = phina.input.Gamepad(index);
       }
-  ```
-* dispose
-  ```javascript
-  function (index) {
-        if (this._created.contains(index)) {
-          var gamepad = this.get(index);
-          delete this.gamepad[gamepad];
-          this._created.erase(index);
-  
-          gamepad.connected = false;
-        }
+
+      return this.gamepads[index];
+    }
+```
+
+### <a name="instance_dispose"></a>dispose
+```javascript
+function (index) {
+      if (this._created.contains(index)) {
+        var gamepad = this.get(index);
+        delete this.gamepad[gamepad];
+        this._created.erase(index);
+
+        gamepad.connected = false;
       }
-  ```
-* isConnected
-  ```javascript
-  function (index) {
-        index = index || 0;
-  
-        return this._rawgamepads[index] && this._rawgamepads[index].connected;
-      }
-  ```
+    }
+```
+
+### <a name="instance_isConnected"></a>isConnected
+```javascript
+function (index) {
+      index = index || 0;
+
+      return this._rawgamepads[index] && this._rawgamepads[index].connected;
+    }
+```
+
 

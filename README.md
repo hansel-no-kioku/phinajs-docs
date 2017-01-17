@@ -1,3 +1,5 @@
 # phina.js Document
 
-* [クラス一覧](docs/class-list.md)
+[phina.js](http://phinajs.com/) is a JavaScript game engine developed by [phi](http://phiary.me/).
+
+* [Class List](docs/class-list.md)
