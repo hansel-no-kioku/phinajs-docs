@@ -92,7 +92,7 @@ print-object = (obj) ->
   print-pair = (str, [k, v]) ->
     str + "  * #{k} : #{print-value v}\n"
   pairs = obj-to-pairs obj
-  if empty pairs  => '{}'
+  if empty pairs  => \Object
   else            => fold print-pair, \\n pairs
 
 # a -> String

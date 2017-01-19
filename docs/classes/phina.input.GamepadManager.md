@@ -12,7 +12,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
-* gamepads : {}
+* gamepads : Object
 
 
 ## Methods

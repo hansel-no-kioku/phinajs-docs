@@ -8,7 +8,7 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 
 ### Class properties
 
-* context : {}
+* context : Object
 
 ### Instance properties (own)
 
