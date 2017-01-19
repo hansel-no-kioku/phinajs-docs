@@ -16,12 +16,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
-* domElement : 
-  * querySelector : Function
-  * createElement : Function
-  * addEventListener : Function
-  * body : [object Object]
-
+* domElement : Object
 * x : Number
 * y : Number
 * dx : Number

@@ -9,20 +9,9 @@ super class : none
 
 ### Instance properties (own)
 
-* domElement : 
-  * getContext : Function
-  * width : 64
-  * height : 64
-
-* canvas : 
-  * getContext : Function
-  * width : 64
-  * height : 64
-
-* context : 
-  * lineCap : 'round'
-  * lineJoin : 'round'
-
+* domElement : Object
+* canvas : Object
+* context : Object
 * width : Unknown
 * height : Unknown
 * fillStyle : Unknown
