@@ -22,9 +22,29 @@ super class : [phina.display.Shape](phina.display.Shape.md)
   * lineHeight : 1.2
 
 
+### Instance properties (own)
+
+* text : String
+* font : String
+* fontSize : Number
+* fontWeight : String
+* fontFamily : String
+* align : String
+* baseline : String
+* lineHeight : Number
 
 ### Instance properties (inherited)
 
+* width : Number&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* height : Number&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* radius : Number&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* padding : Number&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* backgroundColor : String&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* fill : String&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* stroke : Unknown&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* strokeWidth : Number&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* shadow : Boolean&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
+* shadowBlur : Number&ensp;&ensp;(from [phina.display.Shape](phina.display.Shape.md))
 * visible : Boolean&ensp;&ensp;(from [phina.display.DisplayElement](phina.display.DisplayElement.md))
 * alpha : Number&ensp;&ensp;(from [phina.display.DisplayElement](phina.display.DisplayElement.md))
 * blendMode : String&ensp;&ensp;(from [phina.display.DisplayElement](phina.display.DisplayElement.md))
@@ -33,9 +53,26 @@ super class : [phina.display.Shape](phina.display.Shape.md)
 * rotation : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * scale : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * origin : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* x : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* y : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* originX : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* originY : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* scaleX : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* scaleY : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* top : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* right : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* bottom : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* left : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* centerX : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* centerY : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* draggable : [phina.accessory.Draggable](phina.accessory.Draggable.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* flickable : [phina.accessory.Flickable](phina.accessory.Flickable.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* physical : [phina.accessory.Physical](phina.accessory.Physical.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* accessories : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 
 ## Methods
 
@@ -92,6 +129,8 @@ super class : [phina.display.Shape](phina.display.Shape.md)
 * [sleep](phina.app.Element.md#instance_sleep)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * [fromJSON](phina.app.Element.md#instance_fromJSON)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * [toJSON](phina.app.Element.md#instance_toJSON)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [attach](phina.app.Element.md#instance_attach)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* [detach](phina.app.Element.md#instance_detach)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * [on](phina.util.EventDispatcher.md#instance_on)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [off](phina.util.EventDispatcher.md#instance_off)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [fire](phina.util.EventDispatcher.md#instance_fire)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
@@ -99,6 +138,12 @@ super class : [phina.display.Shape](phina.display.Shape.md)
 * [one](phina.util.EventDispatcher.md#instance_one)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [has](phina.util.EventDispatcher.md#instance_has)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [clear](phina.util.EventDispatcher.md#instance_clear)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [addEventListener](phina.util.EventDispatcher.md#instance_addEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [removeEventListener](phina.util.EventDispatcher.md#instance_removeEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [clearEventListener](phina.util.EventDispatcher.md#instance_clearEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [hasEventListener](phina.util.EventDispatcher.md#instance_hasEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [dispatchEvent](phina.util.EventDispatcher.md#instance_dispatchEvent)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [dispatchEventByType](phina.util.EventDispatcher.md#instance_dispatchEventByType)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
 
 ## Source code of methods (instance)

@@ -12,6 +12,11 @@ super class : none
 * x : Number
 * y : Number
 * radius : Number
+* left : Number
+* top : Number
+* right : Number
+* bottom : Number
+* size : Number
 
 
 ## Methods

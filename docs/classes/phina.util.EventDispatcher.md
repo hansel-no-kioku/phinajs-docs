@@ -22,6 +22,12 @@ super class : none
 * [one](#instance_one)
 * [has](#instance_has)
 * [clear](#instance_clear)
+* [addEventListener](#instance_addEventListener)
+* [removeEventListener](#instance_removeEventListener)
+* [clearEventListener](#instance_clearEventListener)
+* [hasEventListener](#instance_hasEventListener)
+* [dispatchEvent](#instance_dispatchEvent)
+* [dispatchEventByType](#instance_dispatchEventByType)
 
 
 
@@ -123,6 +129,82 @@ function (type) {
       var oldEventName = 'on' + type;
       if (this[oldEventName]) delete this[oldEventName];
       this._listeners[type] = [];
+      return this;
+    }
+```
+
+### <a name="instance_addEventListener"></a>addEventListener
+```javascript
+function (type, listener) {
+      if (this._listeners[type] === undefined) {
+        this._listeners[type] = [];
+      }
+
+      this._listeners[type].push(listener);
+      return this;
+    }
+```
+
+### <a name="instance_removeEventListener"></a>removeEventListener
+```javascript
+function (type, listener) {
+      var listeners = this._listeners[type];
+      var index = listeners.indexOf(listener);
+      if (index != -1) {
+        listeners.splice(index,1);
+      }
+      return this;
+    }
+```
+
+### <a name="instance_clearEventListener"></a>clearEventListener
+```javascript
+function (type) {
+      var oldEventName = 'on' + type;
+      if (this[oldEventName]) delete this[oldEventName];
+      this._listeners[type] = [];
+      return this;
+    }
+```
+
+### <a name="instance_hasEventListener"></a>hasEventListener
+```javascript
+function (type) {
+      if (this._listeners[type] === undefined && !this["on" + type]) return false;
+      return true;
+    }
+```
+
+### <a name="instance_dispatchEvent"></a>dispatchEvent
+```javascript
+function (e) {
+      e.target = this;
+      var oldEventName = 'on' + e.type;
+      if (this[oldEventName]) this[oldEventName](e);
+      
+      var listeners = this._listeners[e.type];
+      if (listeners) {
+        var temp = listeners.clone();
+        for (var i=0,len=temp.length; i<len; ++i) {
+            temp[i].call(this, e);
+        }
+      }
+      
+      return this;
+    }
+```
+
+### <a name="instance_dispatchEventByType"></a>dispatchEventByType
+```javascript
+function (type, param) {
+      var e = {type:type};
+      if (param) {
+        param.forIn(function(key, val) {
+          e[key] = val;
+        });
+      }
+      this.fire(e);
+
       return this;
     }
 ```

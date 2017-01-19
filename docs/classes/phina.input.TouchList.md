@@ -12,6 +12,7 @@ super class : none
 * domElement : Unknown
 * touchMap : Unknown
 * touches : Unknown
+* id : Unknown
 
 
 ## Methods

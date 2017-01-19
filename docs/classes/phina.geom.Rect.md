@@ -13,6 +13,12 @@ super class : none
 * y : Number
 * width : Number
 * height : Number
+* left : Number
+* top : Number
+* right : Number
+* bottom : Number
+* centerX : Number
+* centerY : Number
 
 
 ## Methods

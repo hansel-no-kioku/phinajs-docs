@@ -14,6 +14,14 @@ super class : [phina.app.BaseApp](phina.app.BaseApp.md)
 ### Instance properties (inherited)
 
 * awake : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* fps : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* frame : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* currentScene : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* rootScene : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* deltaTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* elapsedTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* currentTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* startTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 
 ## Methods
 
@@ -39,6 +47,12 @@ super class : [phina.app.BaseApp](phina.app.BaseApp.md)
 * [one](phina.util.EventDispatcher.md#instance_one)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [has](phina.util.EventDispatcher.md#instance_has)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [clear](phina.util.EventDispatcher.md#instance_clear)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [addEventListener](phina.util.EventDispatcher.md#instance_addEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [removeEventListener](phina.util.EventDispatcher.md#instance_removeEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [clearEventListener](phina.util.EventDispatcher.md#instance_clearEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [hasEventListener](phina.util.EventDispatcher.md#instance_hasEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [dispatchEvent](phina.util.EventDispatcher.md#instance_dispatchEvent)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [dispatchEventByType](phina.util.EventDispatcher.md#instance_dispatchEventByType)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
 
 ## Source code of methods (instance)

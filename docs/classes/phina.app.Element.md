@@ -10,8 +10,12 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 ### Instance properties (own)
 
 * parent : Unknown
-* children : Array
+* children : Unknown
 * awake : Boolean
+* tweener : Unknown
+* draggable : Unknown
+* flickable : Unknown
+* physical : [phina.accessory.Physical](phina.accessory.Physical.md)
 
 
 ## Methods
@@ -35,6 +39,8 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 * [sleep](#instance_sleep)
 * [fromJSON](#instance_fromJSON)
 * [toJSON](#instance_toJSON)
+* [attach](#instance_attach)
+* [detach](#instance_detach)
 
 ### Instance methods (inherited)
 
@@ -45,6 +51,12 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 * [one](phina.util.EventDispatcher.md#instance_one)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [has](phina.util.EventDispatcher.md#instance_has)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [clear](phina.util.EventDispatcher.md#instance_clear)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [addEventListener](phina.util.EventDispatcher.md#instance_addEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [removeEventListener](phina.util.EventDispatcher.md#instance_removeEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [clearEventListener](phina.util.EventDispatcher.md#instance_clearEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [hasEventListener](phina.util.EventDispatcher.md#instance_hasEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [dispatchEvent](phina.util.EventDispatcher.md#instance_dispatchEvent)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+* [dispatchEventByType](phina.util.EventDispatcher.md#instance_dispatchEventByType)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
 
 ## Source code of methods (instance)
@@ -253,6 +265,39 @@ function () {
 
       return json;
     }
+```
+
+### <a name="instance_attach"></a>attach
+```javascript
+function (accessory) {
+    if (!this.accessories) {
+      this.accessories = [];
+      this.on('enterframe', function(e) {
+        this.accessories.each(function(accessory) {
+          accessory.update && accessory.update(e.app);
+        });
+      });
+    }
+
+    this.accessories.push(accessory);
+    accessory.setTarget(this);
+    accessory.flare('attached');
+
+    return this;
+  }
+```
+
+### <a name="instance_detach"></a>detach
+```javascript
+function (accessory) {
+    if (this.accessories) {
+      this.accessories.erase(accessory);
+      accessory.setTarget(null);
+      accessory.flare('detached');
+    }
+
+    return this;
+  }
 ```
 
 

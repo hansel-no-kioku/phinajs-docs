@@ -11,6 +11,9 @@ super class : none
 * MAX : Number
 * seed : Number
 
+### Instance properties (own)
+
+* seed : Number
 
 
 ## Methods

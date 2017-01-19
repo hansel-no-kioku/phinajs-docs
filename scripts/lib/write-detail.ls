@@ -74,11 +74,12 @@ print-method-source = (mark) -> (str, [k, v, o]) ->
   "### <a name=\"#{mark}_#{k}\"></a>#{k}#{print-owner o}\n" +
   "```javascript\n#{v.to-string!}\n```\n\n"
 
-# String -> String
+# Maybe String -> String
 print-owner = (owner) ->
-  | owner? => "#{'&ensp;' * 2}(from [#{owner}](#{owner}.md))"
-  | _      => ''
-
+  if owner? and owner isnt \own
+    "#{'&ensp;' * 2}(from [#{owner}](#{owner}.md))"
+  else
+    ''
 # a -> String
 print-type = (value) ->
   | (klass = value?.class-name)?  => "[#{klass}](#{klass}.md)"

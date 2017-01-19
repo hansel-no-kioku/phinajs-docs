@@ -23,6 +23,24 @@ super class : none
   * lineCap : 'round'
   * lineJoin : 'round'
 
+* width : Unknown
+* height : Unknown
+* fillStyle : Unknown
+* strokeStyle : Unknown
+* globalAlpha : Unknown
+* globalCompositeOperation : Unknown
+* shadowBlur : Unknown
+* shadowColor : Unknown
+* shadowOffsetX : Unknown
+* shadowOffsetY : Unknown
+* lineCap : String
+* lineJoin : String
+* miterLimit : Unknown
+* lineWidth : Unknown
+* font : Unknown
+* textAlign : Unknown
+* textBaseline : Unknown
+* imageSmoothingEnabled : Unknown
 
 
 ## Methods
