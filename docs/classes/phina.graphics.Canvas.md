@@ -9,12 +9,12 @@ super class : none
 
 ### Instance properties (own)
 
-* domElement : Object
-* canvas : Object
-* context : Object
-* width : Unknown
-* height : Unknown
-* fillStyle : Unknown
+* domElement : Element
+* canvas : Element
+* context : CanvasRenderingContext2D
+* width : Number
+* height : Number
+* fillStyle : String
 * strokeStyle : Unknown
 * globalAlpha : Unknown
 * globalCompositeOperation : Unknown

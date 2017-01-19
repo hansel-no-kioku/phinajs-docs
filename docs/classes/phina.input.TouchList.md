@@ -9,10 +9,10 @@ super class : none
 
 ### Instance properties (own)
 
-* domElement : Unknown
-* touchMap : Unknown
-* touches : Unknown
-* id : Unknown
+* domElement : Element
+* touchMap : Object
+* touches : Array
+* id : Number
 
 
 ## Methods

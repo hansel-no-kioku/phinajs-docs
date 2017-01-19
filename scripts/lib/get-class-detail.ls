@@ -6,6 +6,7 @@ require! {
     is-type, concat, all, any, map, filter, reject, fold, foldr, obj-to-pairs
   }
   \object.entries : entries
+  \./dummy-dom : {dummy-element}
 }
 
 module.exports = (klass) ->
@@ -60,7 +61,7 @@ get-own-props = (klass, class-name) ->
 fillup-props = (klass, props) -->
   if not is-completed props and klass::init? then
     try
-      map (fillup-prop klass!), props
+      map (fillup-prop klass init-args[klass::class-name]), props
     catch e
       console.log "#{klass::class-name} : #{e.message}"
       props
@@ -79,3 +80,16 @@ is-completed = all (?) . (.1)
 filter-phina = (props) ->
   ignore-props = <[ constructor superInit superMethod superClass className ]>
   reject (|> (is /^_.*/) or (str) -> any (is str), ignore-props) . (.0), props
+
+init-args =
+  \phina.input.Input : dummy-element
+  \phina.input.Mouce : dummy-element
+  \phina.input.Touch : dummy-element
+  \phina.input.TouchList : dummy-element
+  \phina.display.DomApp :
+    \domElement : dummy-element
+  \phina.display.Sprite :
+    \domElement : dummy-element
+    dummy-name : \Image
+  \phina.game.ManagerScene :
+    \scene : dummy-name : \Scene

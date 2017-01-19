@@ -9,17 +9,17 @@ super class : [phina.app.BaseApp](phina.app.BaseApp.md)
 
 ### Instance properties (own)
 
-* domElement : Unknown
+* domElement : Element
 
 ### Instance properties (inherited)
 
-* awake : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* fps : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* frame : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* currentScene : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* rootScene : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* deltaTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* elapsedTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* awake : Boolean&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* fps : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* frame : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* currentScene : [phina.app.Scene](phina.app.Scene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* rootScene : [phina.app.Scene](phina.app.Scene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* deltaTime : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* elapsedTime : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * currentTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * startTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 

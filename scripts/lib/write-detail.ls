@@ -83,7 +83,7 @@ print-owner = (owner) ->
 # a -> String
 print-type = (value) ->
   | (klass = value?.class-name)?  => "[#{klass}](#{klass}.md)"
-  | value?.is-dummy               => \Object
+  | value?.dummy-name?            => value.dummy-name
   | is-type \Object value         => print-object value
   | value?                        => typeof! value
   | _                             => \Unknown

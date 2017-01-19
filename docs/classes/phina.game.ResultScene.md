@@ -12,7 +12,7 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
   * score : 16
   * message : 'this is phina.js project.'
   * hashtags : 'phina_js,game,javascript'
-  * url : undefined
+  * url : 'URL'
   * width : 640
   * height : 960
   * fontColor : 'white'

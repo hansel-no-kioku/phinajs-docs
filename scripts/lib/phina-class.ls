@@ -1,11 +1,19 @@
 #------------------------------------------------------------------------------
 # Phina class
 
+require! {
+  \./dummy-dom : {dummy-document, dummy-element}
+}
+
 global.Box2D = require \box2dweb
-global.document = require \./dummy-document
+global.document = dummy-document
+global.location = href: \URL
+global.Image = -> dummy-element
 global.CanvasRenderingContext2D = {}
 global.AudioContext = ->
 global.addEventListener = ->
+global.innerWidth = 640
+global.innerHeight = 960
 global.window = global
 
 require! {

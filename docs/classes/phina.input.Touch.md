@@ -10,7 +10,7 @@ super class : [phina.input.Input](phina.input.Input.md)
 
 ### Instance properties (inherited)
 
-* domElement : Object&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* domElement : Element&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
 * x : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
 * y : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
 * dx : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))

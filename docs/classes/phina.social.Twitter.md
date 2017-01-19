@@ -12,7 +12,7 @@ super class : none
 * defaults : 
   * text : 'Hello, world!'
   * hashtags : 'javascript,phina'
-  * url : undefined
+  * url : 'URL'
 
 
 
