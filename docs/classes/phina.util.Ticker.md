@@ -9,6 +9,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
+* frameTime : Number
 * frame : Number
 * deltaTime : Number
 * elapsedTime : Number

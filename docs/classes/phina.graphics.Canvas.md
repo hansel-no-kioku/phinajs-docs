@@ -9,8 +9,8 @@ super class : none
 
 ### Instance properties (own)
 
-* domElement : Element
 * canvas : Element
+* domElement : Element
 * context : CanvasRenderingContext2D
 * width : Number
 * height : Number

@@ -9,6 +9,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
+* loaded : Boolean
 * serverError : Boolean
 * notFound : Boolean
 * loadError : Boolean

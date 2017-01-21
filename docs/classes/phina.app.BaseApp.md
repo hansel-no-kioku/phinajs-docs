@@ -9,7 +9,10 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
+* updater : [phina.app.Updater](phina.app.Updater.md)
+* interactive : [phina.app.Interactive](phina.app.Interactive.md)
 * awake : Boolean
+* ticker : [phina.util.Ticker](phina.util.Ticker.md)
 * fps : Number
 * frame : Number
 * currentScene : [phina.app.Scene](phina.app.Scene.md)

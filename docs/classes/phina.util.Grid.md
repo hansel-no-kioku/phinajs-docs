@@ -9,6 +9,7 @@ super class : none
 
 ### Instance properties (own)
 
+* unitWidth : Number
 * width : Number
 * columns : Number
 * loop : Boolean

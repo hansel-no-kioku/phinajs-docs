@@ -2,6 +2,7 @@
 # Phina class
 
 require! {
+  \prelude-ls : {is-type, filter, fold, concat-map, values}
   \./dummy-dom : {dummy-document, dummy-element}
 }
 
@@ -15,10 +16,6 @@ global.addEventListener = ->
 global.innerWidth = 640
 global.innerHeight = 960
 global.window = global
-
-require! {
-  \prelude-ls : {is-type, filter, fold, concat-map, values}
-}
 
 # String -> Object -> [a]
 select-type = (t, o) --> filter (is-type t), values o

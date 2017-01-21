@@ -10,10 +10,20 @@ super class : [phina.app.BaseApp](phina.app.BaseApp.md)
 ### Instance properties (own)
 
 * domElement : Element
+* mouse : [phina.input.Mouse](phina.input.Mouse.md)
+* touch : [phina.input.Touch](phina.input.Touch.md)
+* touchList : [phina.input.TouchList](phina.input.TouchList.md)
+* keyboard : [phina.input.Keyboard](phina.input.Keyboard.md)
+* accelerometer : [phina.input.Accelerometer](phina.input.Accelerometer.md)
+* pointer : [phina.input.Touch](phina.input.Touch.md)
+* pointers : Array
 
 ### Instance properties (inherited)
 
+* updater : [phina.app.Updater](phina.app.Updater.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* interactive : [phina.app.Interactive](phina.app.Interactive.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* ticker : [phina.util.Ticker](phina.util.Ticker.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * fps : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * frame : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * currentScene : [phina.app.Scene](phina.app.Scene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))

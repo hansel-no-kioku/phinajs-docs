@@ -17,6 +17,16 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 ### Instance properties (own)
 
 * domElement : Element
+* position : [phina.geom.Vector2](phina.geom.Vector2.md)
+* startPosition : [phina.geom.Vector2](phina.geom.Vector2.md)
+* deltaPosition : [phina.geom.Vector2](phina.geom.Vector2.md)
+* prevPosition : [phina.geom.Vector2](phina.geom.Vector2.md)
+* maxCacheNum : Number
+* minDistance : Number
+* maxDistance : Number
+* cachePositions : Array
+* flickVelocity : [phina.geom.Vector2](phina.geom.Vector2.md)
+* flags : Number
 * x : Number
 * y : Number
 * dx : Number

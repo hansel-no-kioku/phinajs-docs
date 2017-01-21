@@ -7,11 +7,16 @@ super class : [phina.app.Scene](phina.app.Scene.md)
 ## Properties
 
 
+### Instance properties (own)
+
+* scenes : Unknown
+* sceneIndex : Number
+* commonArguments : Object
 
 ### Instance properties (inherited)
 
+* children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
-* children : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * draggable : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))

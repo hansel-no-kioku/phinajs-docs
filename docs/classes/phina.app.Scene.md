@@ -10,8 +10,8 @@ super class : [phina.app.Element](phina.app.Element.md)
 
 ### Instance properties (inherited)
 
+* children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
-* children : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * draggable : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))

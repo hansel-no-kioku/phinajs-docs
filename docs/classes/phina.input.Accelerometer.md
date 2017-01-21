@@ -7,6 +7,12 @@ super class : none
 ## Properties
 
 
+### Instance properties (own)
+
+* gravity : [phina.geom.Vector3](phina.geom.Vector3.md)
+* acceleration : [phina.geom.Vector3](phina.geom.Vector3.md)
+* rotation : [phina.geom.Vector3](phina.geom.Vector3.md)
+* orientation : [phina.geom.Vector3](phina.geom.Vector3.md)
 
 
 ## Methods

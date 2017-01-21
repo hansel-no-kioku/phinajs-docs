@@ -39,42 +39,65 @@ get-class-props = (func, klass) ->
 
 # Class -> [[String, ...]]
 get-props = (klass) ->
-  klass::_hierarchies
-  |> foldr ((k, p) -> p with get-own-props k, k::class-name), {}
-  |> (with get-own-props klass, \own)
+  [klass] ++ klass::_hierarchies
+  |> foldr (inherit klass::class-name), {}
   |> obj-to-pairs
   |> filter-phina
   |> map concat
-  |> fillup-props klass
 
-# Class -> String -> a
-get-own-props = (klass, class-name) ->
-  get-value = (c, k) ->
-    try
-      c::[k]
-    catch e
-      null
-  f = (p, k) -> p[k] = [(get-value klass, k), class-name]; p
-  fold f, {}, Object.get-own-property-names klass::
+# String -> Class -> Props -> Props
+inherit = (own, klass, props) -->
+  class-name = if klass::class-name is own then \own else klass::class-name
+  get-own-props klass::, class-name
+  |> (props with)
+  |> add-instance-props klass, class-name
 
-# Class -> [[String, a, ...]] -> [[String, a, ...]]
-fillup-props = (klass, props) -->
-  if not is-completed props and klass::init? then
-    try
-      map (fillup-prop klass init-args[klass::class-name]), props
-    catch e
-      console.log "#{klass::class-name} : #{e.message}"
-      props
+# Object -> String -> Props
+get-own-props = (object, class-name) ->
+  f = (p, k) -> p[k] = [(get-value k, object), class-name]; p
+  fold f, {}, Object.get-own-property-names object
+
+# Class -> String -> Props -> Props
+add-instance-props = (klass, class-name, props) -->
+  if (instance = get-instance klass)?
+    obj-to-pairs instance
+    |> fold (inherit-value class-name), ^^props
+    |> fillup instance
   else
     props
 
-# Object -> [String, a, ...] -> [String, a, ...]
-fillup-prop = (instance, [k, v, ...xs]:prop) -->
-  | v?  => prop
-  | _   => [k, instance[k], ...xs]
+# Class -> Maybe Object
+get-instance = (klass) ->
+  if klass::init?
+    try
+      klass init-args[klass::class-name]
+    catch e
+      console.log "#{klass::class-name} : #{e.message}"
+      null
+  else
+    null
 
-# [[String, a, ...]] -> Boolean
-is-completed = all (?) . (.1)
+# String -> Props -> [key, value] -> Props
+inherit-value = (class-name, props, [k, v]) -->
+  if props[k]?
+    props[k] = [v, props[k].1] if v? and not props[k].0?
+  else
+    props[k] = [v, class-name]
+  props
+
+# Object -> Props -> Props
+fillup = (instance, props) -->
+  f = (p, [k, [v, o]]) ->
+    p[k] = [v ? (get-value k, instance), o]
+    p
+  fold f, {}, obj-to-pairs props
+
+# String -> Object -> a
+get-value = (key, obj) ->
+  try
+    obj[key]
+  catch e
+    null
 
 # [[String, ...]] -> [[String, ...]]
 filter-phina = (props) ->

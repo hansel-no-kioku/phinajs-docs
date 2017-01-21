@@ -55,6 +55,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
+* time : Number
 * easing : Unknown
 
 

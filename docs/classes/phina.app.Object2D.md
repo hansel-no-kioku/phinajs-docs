@@ -25,9 +25,11 @@ super class : [phina.app.Element](phina.app.Element.md)
 ### Instance properties (own)
 
 * position : [phina.geom.Vector2](phina.geom.Vector2.md)
-* rotation : Number
 * scale : [phina.geom.Vector2](phina.geom.Vector2.md)
 * origin : [phina.geom.Vector2](phina.geom.Vector2.md)
+* interactive : Boolean
+* boundingType : String
+* rotation : Number
 * x : Number
 * y : Number
 * originX : Number
@@ -46,8 +48,8 @@ super class : [phina.app.Element](phina.app.Element.md)
 
 ### Instance properties (inherited)
 
-* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * draggable : [phina.accessory.Draggable](phina.accessory.Draggable.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))

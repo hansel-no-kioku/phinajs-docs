@@ -7,6 +7,9 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 ## Properties
 
 
+### Instance properties (own)
+
+* target : Unknown
 
 
 ## Methods

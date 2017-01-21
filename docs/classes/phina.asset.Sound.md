@@ -19,6 +19,7 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 
 ### Instance properties (inherited)
 
+* loaded : Boolean&ensp;&ensp;(from [phina.asset.Asset](phina.asset.Asset.md))
 * serverError : Boolean&ensp;&ensp;(from [phina.asset.Asset](phina.asset.Asset.md))
 * notFound : Boolean&ensp;&ensp;(from [phina.asset.Asset](phina.asset.Asset.md))
 * loadError : Boolean&ensp;&ensp;(from [phina.asset.Asset](phina.asset.Asset.md))

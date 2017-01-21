@@ -12,10 +12,23 @@ super class : [phina.input.Input](phina.input.Input.md)
 * BUTTON_MIDDLE : Number
 * BUTTON_RIGHT : Number
 
+### Instance properties (own)
+
+* id : Number
 
 ### Instance properties (inherited)
 
-* domElement : Document&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* domElement : Element&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* position : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* startPosition : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* deltaPosition : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* prevPosition : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* maxCacheNum : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* minDistance : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* maxDistance : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* cachePositions : Array&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* flickVelocity : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
+* flags : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
 * x : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
 * y : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))
 * dx : Number&ensp;&ensp;(from [phina.input.Input](phina.input.Input.md))

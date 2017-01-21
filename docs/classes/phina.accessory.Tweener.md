@@ -16,8 +16,12 @@ super class : [phina.accessory.Accessory](phina.accessory.Accessory.md)
 
 ### Instance properties (own)
 
+* playing : Boolean
 * updateType : String
 
+### Instance properties (inherited)
+
+* target : Unknown&ensp;&ensp;(from [phina.accessory.Accessory](phina.accessory.Accessory.md))
 
 ## Methods
 

@@ -9,10 +9,11 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance properties (own)
 
+* children : Array
+* accessories : Array
 * parent : Unknown
-* children : Unknown
 * awake : Boolean
-* tweener : Unknown
+* tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)
 * draggable : Unknown
 * flickable : Unknown
 * physical : [phina.accessory.Physical](phina.accessory.Physical.md)

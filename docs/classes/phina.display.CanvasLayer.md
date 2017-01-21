@@ -7,17 +7,26 @@ super class : [phina.display.Layer](phina.display.Layer.md)
 ## Properties
 
 
+### Instance properties (own)
+
+* canvas : [phina.graphics.Canvas](phina.graphics.Canvas.md)
+* renderer : [phina.display.CanvasRenderer](phina.display.CanvasRenderer.md)
+* domElement : Element
 
 ### Instance properties (inherited)
 
+* gridX : [phina.util.Grid](phina.util.Grid.md)&ensp;&ensp;(from [phina.display.Layer](phina.display.Layer.md))
+* gridY : [phina.util.Grid](phina.util.Grid.md)&ensp;&ensp;(from [phina.display.Layer](phina.display.Layer.md))
 * renderChildBySelf : Boolean&ensp;&ensp;(from [phina.display.Layer](phina.display.Layer.md))
 * visible : Boolean&ensp;&ensp;(from [phina.display.DisplayElement](phina.display.DisplayElement.md))
 * alpha : Number&ensp;&ensp;(from [phina.display.DisplayElement](phina.display.DisplayElement.md))
 * blendMode : String&ensp;&ensp;(from [phina.display.DisplayElement](phina.display.DisplayElement.md))
 * position : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
-* rotation : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * scale : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * origin : [phina.geom.Vector2](phina.geom.Vector2.md)&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* interactive : Boolean&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* boundingType : String&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
+* rotation : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * x : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * y : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * originX : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
@@ -33,8 +42,8 @@ super class : [phina.display.Layer](phina.display.Layer.md)
 * left : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * centerX : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
 * centerY : Number&ensp;&ensp;(from [phina.app.Object2D](phina.app.Object2D.md))
-* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * draggable : [phina.accessory.Draggable](phina.accessory.Draggable.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))

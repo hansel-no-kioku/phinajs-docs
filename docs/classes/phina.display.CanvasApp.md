@@ -16,15 +16,31 @@ super class : [phina.display.DomApp](phina.display.DomApp.md)
   * append : true
 
 
+### Instance properties (own)
+
+* gridX : [phina.util.Grid](phina.util.Grid.md)
+* gridY : [phina.util.Grid](phina.util.Grid.md)
+* canvas : [phina.graphics.Canvas](phina.graphics.Canvas.md)
+* backgroundColor : String
 
 ### Instance properties (inherited)
 
 * domElement : Element&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* mouse : [phina.input.Mouse](phina.input.Mouse.md)&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* touch : [phina.input.Touch](phina.input.Touch.md)&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* touchList : [phina.input.TouchList](phina.input.TouchList.md)&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* keyboard : [phina.input.Keyboard](phina.input.Keyboard.md)&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* accelerometer : [phina.input.Accelerometer](phina.input.Accelerometer.md)&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* pointer : [phina.input.Touch](phina.input.Touch.md)&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* pointers : Array&ensp;&ensp;(from [phina.display.DomApp](phina.display.DomApp.md))
+* updater : [phina.app.Updater](phina.app.Updater.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* interactive : [phina.app.Interactive](phina.app.Interactive.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* ticker : [phina.util.Ticker](phina.util.Ticker.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * fps : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * frame : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* currentScene : [phina.display.DisplayScene](phina.display.DisplayScene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
-* rootScene : [phina.display.DisplayScene](phina.display.DisplayScene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* currentScene : [phina.app.Scene](phina.app.Scene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* rootScene : [phina.app.Scene](phina.app.Scene.md)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * deltaTime : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * elapsedTime : Number&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * currentTime : Unknown&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))

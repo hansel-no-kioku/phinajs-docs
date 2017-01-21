@@ -10,8 +10,8 @@ super class : none
 ### Instance properties (own)
 
 * domElement : Element
-* touchMap : Object
 * touches : Array
+* touchMap : Object
 * id : Number
 
 

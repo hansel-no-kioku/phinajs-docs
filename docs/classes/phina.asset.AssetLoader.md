@@ -19,6 +19,10 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
   * text : Function
 
 
+### Instance properties (own)
+
+* assets : Object
+* cache : Boolean
 
 
 ## Methods

@@ -13,11 +13,21 @@ super class : [phina.app.Scene](phina.app.Scene.md)
   * height : 960
 
 
+### Instance properties (own)
+
+* canvas : [phina.graphics.Canvas](phina.graphics.Canvas.md)
+* renderer : [phina.display.CanvasRenderer](phina.display.CanvasRenderer.md)
+* backgroundColor : Unknown
+* width : Number
+* height : Number
+* gridX : [phina.util.Grid](phina.util.Grid.md)
+* gridY : [phina.util.Grid](phina.util.Grid.md)
+* interactive : Boolean
 
 ### Instance properties (inherited)
 
-* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * draggable : [phina.accessory.Draggable](phina.accessory.Draggable.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
@@ -30,6 +40,7 @@ super class : [phina.app.Scene](phina.app.Scene.md)
 
 ### Instance methods (own)
 
+* [setInteractive](#instance_setInteractive)
 * [init](#instance_init)
 * [hitTest](#instance_hitTest)
 
@@ -69,6 +80,13 @@ super class : [phina.app.Scene](phina.app.Scene.md)
 
 
 ## Source code of methods (instance)
+
+### <a name="instance_setInteractive"></a>setInteractive
+```javascript
+function (flag) {
+        this.interactive = flag;
+      }
+```
 
 ### <a name="instance_init"></a>init
 ```javascript

@@ -7,7 +7,15 @@ super class : [phina.accessory.Accessory](phina.accessory.Accessory.md)
 ## Properties
 
 
+### Instance properties (own)
 
+* velocity : [phina.geom.Vector2](phina.geom.Vector2.md)
+* gravity : [phina.geom.Vector2](phina.geom.Vector2.md)
+* friction : Number
+
+### Instance properties (inherited)
+
+* target : Unknown&ensp;&ensp;(from [phina.accessory.Accessory](phina.accessory.Accessory.md))
 
 ## Methods
 

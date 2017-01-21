@@ -19,11 +19,23 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
   * exitType : 'touch'
 
 
+### Instance properties (own)
+
+* titleLabel : [phina.display.Label](phina.display.Label.md)
+* touchLabel : [phina.display.Label](phina.display.Label.md)
 
 ### Instance properties (inherited)
 
-* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* backgroundColor : String&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* canvas : [phina.graphics.Canvas](phina.graphics.Canvas.md)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* renderer : [phina.display.CanvasRenderer](phina.display.CanvasRenderer.md)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* width : Number&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* height : Number&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* gridX : [phina.util.Grid](phina.util.Grid.md)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* gridY : [phina.util.Grid](phina.util.Grid.md)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
+* interactive : Boolean&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
 * children : Array&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
+* parent : Unknown&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * awake : Boolean&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * tweener : [phina.accessory.Tweener](phina.accessory.Tweener.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
 * draggable : [phina.accessory.Draggable](phina.accessory.Draggable.md)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
@@ -40,6 +52,7 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 
 ### Instance methods (inherited)
 
+* [setInteractive](phina.display.DisplayScene.md#instance_setInteractive)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
 * [hitTest](phina.display.DisplayScene.md#instance_hitTest)&ensp;&ensp;(from [phina.display.DisplayScene](phina.display.DisplayScene.md))
 * [exit](phina.app.Scene.md#instance_exit)&ensp;&ensp;(from [phina.app.Scene](phina.app.Scene.md))
 * [addChild](phina.app.Element.md#instance_addChild)&ensp;&ensp;(from [phina.app.Element](phina.app.Element.md))
