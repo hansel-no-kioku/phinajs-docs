@@ -7,6 +7,14 @@ super class : none
 ## Properties
 
 
+### Instance properties (own)
+
+* app : phina.app.BaseApp
+* multiTouch : Boolean
+* cursor : 
+  * normal : ''
+  * hover : 'pointer'
+
 
 
 ## Methods

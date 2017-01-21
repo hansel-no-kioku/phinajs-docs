@@ -31,4 +31,10 @@ dummy-context =
   fillRect: ->
   set-transform: ->
 
-export dummy-document, dummy-element, dummy-context
+dummy-audio-context = ->
+  create-gain: ->
+    gain: value: 0
+    dummy-name: \GainNode
+  dummy-name: \AudioContext
+
+export dummy-document, dummy-element, dummy-context, dummy-audio-context

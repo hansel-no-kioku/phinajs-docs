@@ -15,6 +15,9 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
   * lie : false
 
 
+### Instance properties (own)
+
+* gauge : [phina.ui.Gauge](phina.ui.Gauge.md)
 
 ### Instance properties (inherited)
 

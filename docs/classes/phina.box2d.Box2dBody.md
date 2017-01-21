@@ -7,6 +7,12 @@ super class : [phina.accessory.Accessory](phina.accessory.Accessory.md)
 ## Properties
 
 
+### Instance properties (own)
+
+* world : Box2D.Dynamics.b2World
+* type : String
+* shape : String
+* body : Box2D.Dynamics.b2Body
 
 ### Instance properties (inherited)
 

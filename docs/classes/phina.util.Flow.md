@@ -7,6 +7,10 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 ## Properties
 
 
+### Instance properties (own)
+
+* status : String
+* resultValue : Unknown
 
 
 ## Methods
@@ -18,6 +22,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ### Instance methods (own)
 
+* [func](#instance_func)
 * [init](#instance_init)
 * [resolve](#instance_resolve)
 * [reject](#instance_reject)
@@ -80,6 +85,11 @@ function (flows) {
 
 
 ## Source code of methods (instance)
+
+### <a name="instance_func"></a>func
+```javascript
+function (){}
+```
 
 ### <a name="instance_init"></a>init
 ```javascript

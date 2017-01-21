@@ -105,6 +105,9 @@ filter-phina = (props) ->
   reject (|> (is /^_.*/) or (str) -> any (is str), ignore-props) . (.0), props
 
 init-args =
+  \phina.app.Interactive :
+    on : ->
+    dummy-name : \phina.app.BaseApp
   \phina.input.Input : dummy-element
   \phina.input.Mouce : dummy-element
   \phina.input.Touch : dummy-element
@@ -114,5 +117,15 @@ init-args =
   \phina.display.Sprite :
     \domElement : dummy-element
     dummy-name : \Image
+  \phina.display.CanvasRenderer : dummy-element
   \phina.game.ManagerScene :
     \scene : dummy-name : \Scene
+  \phina.game.LoadingScene : assets : {}
+  \phina.util.Flow : ->
+  \phina.box2d.Box2dBody :
+    world :
+      CreateBody : ->
+        dummy-name : \Box2D.Dynamics.b2Body
+      dummy-name : \Box2D.Dynamics.b2World
+    type : \dynamic
+    shape : \circle

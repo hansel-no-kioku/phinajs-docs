@@ -7,6 +7,9 @@ super class : none
 ## Properties
 
 
+### Instance properties (own)
+
+* canvas : Element
 
 
 ## Methods

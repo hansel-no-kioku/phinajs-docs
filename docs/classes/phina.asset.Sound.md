@@ -8,11 +8,13 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 
 ### Class properties
 
-* context : Object
+* context : AudioContext
 
 ### Instance properties (own)
 
-* volume : Unknown
+* context : AudioContext
+* gainNode : GainNode
+* volume : Number
 * loop : Boolean
 * loopStart : Number
 * loopEnd : Number
