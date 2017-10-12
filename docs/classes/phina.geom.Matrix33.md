@@ -21,7 +21,6 @@ super class : none
 * m20 : Number
 * m21 : Number
 * m22 : Number
-* x : Unknown
 
 
 ## Methods

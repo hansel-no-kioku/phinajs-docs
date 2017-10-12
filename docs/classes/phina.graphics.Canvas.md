@@ -38,6 +38,7 @@ super class : none
 
 * [measureText](#class_measureText)
 * [createLinearGradient](#class_createLinearGradient)
+* [createRadialGradient](#class_createRadialGradient)
 
 ### Instance methods (own)
 
@@ -91,6 +92,8 @@ super class : none
 * [ellipse](#instance_ellipse)
 * [fillEllipse](#instance_fillEllipse)
 * [strokeEllipse](#instance_strokeEllipse)
+* [fillText](#instance_fillText)
+* [strokeText](#instance_strokeText)
 * [drawImage](#instance_drawImage)
 * [setTransform](#instance_setTransform)
 * [resetTransform](#instance_resetTransform)
@@ -117,6 +120,13 @@ function (font, text) {
 ```javascript
 function () {
         return this._context.createLinearGradient.apply(this._context, arguments);
+      }
+```
+
+### <a name="class_createRadialGradient"></a>createRadialGradient
+```javascript
+function () {
+        return this._context.createRadialGradient.apply(this._context, arguments);
       }
 ```
 
@@ -709,6 +719,22 @@ function (x, y, width, height) {
 ```javascript
 function (x, y, width, height) {
       return this.beginPath().ellipse(x, y, width, height).stroke();
+    }
+```
+
+### <a name="instance_fillText"></a>fillText
+```javascript
+function () {
+      this._context.fillText.apply(this._context, arguments);
+      return this;
+    }
+```
+
+### <a name="instance_strokeText"></a>strokeText
+```javascript
+function () {
+      this._context.strokeText.apply(this._context, arguments);
+      return this;
     }
 ```
 

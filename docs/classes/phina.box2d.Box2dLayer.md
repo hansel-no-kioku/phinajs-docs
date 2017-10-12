@@ -2,7 +2,7 @@
 
 # phina.box2d.Box2dLayer
 
-super class : [phina.display.Layer](phina.display.Layer.md)
+super class : [phina.display.CanvasLayer](phina.display.CanvasLayer.md)
 
 ## Properties
 
@@ -10,6 +10,9 @@ super class : [phina.display.Layer](phina.display.Layer.md)
 
 ### Instance properties (inherited)
 
+* canvas : [phina.graphics.Canvas](phina.graphics.Canvas.md)&ensp;&ensp;(from [phina.display.CanvasLayer](phina.display.CanvasLayer.md))
+* renderer : [phina.display.CanvasRenderer](phina.display.CanvasRenderer.md)&ensp;&ensp;(from [phina.display.CanvasLayer](phina.display.CanvasLayer.md))
+* domElement : Element&ensp;&ensp;(from [phina.display.CanvasLayer](phina.display.CanvasLayer.md))
 * gridX : [phina.util.Grid](phina.util.Grid.md)&ensp;&ensp;(from [phina.display.Layer](phina.display.Layer.md))
 * gridY : [phina.util.Grid](phina.util.Grid.md)&ensp;&ensp;(from [phina.display.Layer](phina.display.Layer.md))
 * renderChildBySelf : Boolean&ensp;&ensp;(from [phina.display.Layer](phina.display.Layer.md))

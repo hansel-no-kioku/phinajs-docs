@@ -18,6 +18,7 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 * loop : Boolean
 * loopStart : Number
 * loopEnd : Number
+* playbackRate : Number
 
 ### Instance properties (inherited)
 
@@ -30,6 +31,7 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 
 ### Class methods
 
+* [getMasterGain](#class_getMasterGain)
 * [getAudioContext](#class_getAudioContext)
 
 ### Instance methods (own)
@@ -43,6 +45,7 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 * [setLoop](#instance_setLoop)
 * [setLoopStart](#instance_setLoopStart)
 * [setLoopEnd](#instance_setLoopEnd)
+* [setPlaybackRate](#instance_setPlaybackRate)
 * [loadDummy](#instance_loadDummy)
 
 ### Instance methods (inherited)
@@ -64,6 +67,18 @@ super class : [phina.asset.Asset](phina.asset.Asset.md)
 * [dispatchEventByType](phina.util.EventDispatcher.md#instance_dispatchEventByType)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
 ## Source code of methods (class)
+
+### <a name="class_getMasterGain"></a>getMasterGain
+```javascript
+function () {
+        if(!this._masterGain) {
+          var context = this.getAudioContext();
+          this._masterGain = context.createGain();
+          this._masterGain.connect(context.destination);
+        }
+        return this._masterGain;
+      }
+```
 
 ### <a name="class_getAudioContext"></a>getAudioContext
 ```javascript
@@ -105,30 +120,36 @@ function () {
 
 ### <a name="instance_play"></a>play
 ```javascript
-function () {
+function (when, offset, duration) {
+      when = when ? when + this.context.currentTime : 0;
+      offset = offset || 0;
+
       if (this.source) {
         // TODO: キャッシュする？
       }
 
-      this.source = this.context.createBufferSource();
-      this.source.buffer = this.buffer;
-      this.source.loop = this._loop;
-      this.source.loopStart = this._loopStart;
-      this.source.loopEnd = this._loopEnd;
+      var source = this.source = this.context.createBufferSource();
+      var buffer = source.buffer = this.buffer;
+      source.loop = this._loop;
+      source.loopStart = this._loopStart;
+      source.loopEnd = this._loopEnd;
+      source.playbackRate.value = this._playbackRate;
 
       // connect
-      this.source.connect(this.gainNode);
-      this.gainNode.connect(this.context.destination);
+      source.connect(this.gainNode);
+      this.gainNode.connect(phina.asset.Sound.getMasterGain());
       // play
-      this.source.start(0);
+      if (duration !== undefined) {
+        source.start(when, offset, duration);
+      }
+      else {
+        source.start(when, offset);
+      }
       
       // check play end
-      if (this.source.buffer) {
-        var time = (this.source.buffer.duration/this.source.playbackRate.value)*1000;
-        window.setTimeout(function(self) {
-          self.flare('ended');
-        }, time, this);
-      }
+      source.addEventListener('ended', function(){
+        this.flare('ended');
+      }.bind(this));
 
       return this;
     }
@@ -139,8 +160,10 @@ function () {
 function () {
       // stop
       if (this.source) {
+        // stop すると source.endedも発火する
         this.source.stop && this.source.stop(0);
         this.source = null;
+        this.flare('stop');
       }
 
       return this;
@@ -150,7 +173,8 @@ function () {
 ### <a name="instance_pause"></a>pause
 ```javascript
 function () {
-      this.source.disconnect();
+      this.source.playbackRate.value = 0;
+      this.flare('pause');
       return this;
     }
 ```
@@ -158,7 +182,8 @@ function () {
 ### <a name="instance_resume"></a>resume
 ```javascript
 function () {
-      this.source.connect(this.gainNode);
+      this.source.playbackRate.value = this._playbackRate;
+      this.flare('resume');
       return this;
     }
 ```
@@ -204,6 +229,14 @@ function (loopStart) {
 ```javascript
 function (loopEnd) {
       this.loopEnd = loopEnd;
+      return this;
+    }
+```
+
+### <a name="instance_setPlaybackRate"></a>setPlaybackRate
+```javascript
+function (playbackRate) {
+      this.playbackRate = playbackRate;
       return this;
     }
 ```

@@ -41,7 +41,7 @@ function (scene) {
       if (scene.backgroundColor) {
         this.canvas.clearColor(scene.backgroundColor);
       }
-      
+
       this._context.save();
       this.renderChildren(scene);
       this._context.restore();
@@ -64,9 +64,12 @@ function (obj) {
 ### <a name="instance_renderObject"></a>renderObject
 ```javascript
 function (obj) {
-      if (obj.visible === false) return ;
+      if (obj.visible === false && !obj.interactive) return;
 
       obj._calcWorldMatrix && obj._calcWorldMatrix();
+
+      if (obj.visible === false) return;
+
       obj._calcWorldAlpha && obj._calcWorldAlpha();
 
       var context = this.canvas.context;

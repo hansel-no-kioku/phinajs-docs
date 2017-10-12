@@ -29,7 +29,13 @@ dummy-context =
   restore: ->
   fillStyle: ''
   fillRect: ->
+  fillText: ->
+  fill: ->
+  arc: ->
   set-transform: ->
+  closePath: ->
+  clip: ->
+  measureText: -> width: 100
 
 dummy-audio-context = ->
   create-gain: ->

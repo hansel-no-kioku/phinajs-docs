@@ -18,9 +18,13 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ## Methods
 
+### Class methods
+
+* [runner](#class_runner)
 
 ### Instance methods (own)
 
+* [runner](#instance_runner)
 * [init](#instance_init)
 * [tick](#instance_tick)
 * [run](#instance_run)
@@ -45,8 +49,24 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 * [dispatchEvent](phina.util.EventDispatcher.md#instance_dispatchEvent)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [dispatchEventByType](phina.util.EventDispatcher.md#instance_dispatchEventByType)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 
+## Source code of methods (class)
+
+### <a name="class_runner"></a>runner
+```javascript
+function (run, delay) {
+        setTimeout(run, delay);
+      }
+```
+
 
 ## Source code of methods (instance)
+
+### <a name="instance_runner"></a>runner
+```javascript
+function (run, delay) {
+        setTimeout(run, delay);
+      }
+```
 
 ### <a name="instance_init"></a>init
 ```javascript
@@ -57,6 +77,7 @@ function () {
       this.frame = 0;
       this.deltaTime = 0;
       this.elapsedTime = 0;
+      this.runner = phina.util.Ticker.runner;
     }
 ```
 
@@ -99,10 +120,10 @@ function () {
       var self = this;
 
       this.startTime = this.currentTime = (new Date()).getTime();
-
+      var runner = self.runner;
       var fn = function() {
         var delay = self.run();
-        setTimeout(fn, delay);
+        runner(fn, delay);
       };
       fn();
 

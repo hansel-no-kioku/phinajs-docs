@@ -84,9 +84,8 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 ### <a name="instance_init"></a>init
 ```javascript
 function (options) {
-      this.superInit(options);
-
       var defaults = phina.game.SplashScene.defaults;
+      this.superInit(options);
 
       var texture = phina.asset.Texture();
       texture.load(defaults.imageURL).then(function() {

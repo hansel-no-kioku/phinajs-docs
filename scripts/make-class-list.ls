@@ -8,6 +8,9 @@ require! {
   \../bower_components/phina.js   # Use Object.prototype.accessor
 }
 
+# fix phina.VERSION
+phina.VERSION = \0.2.1
+
 dest = \./docs/class-list.md
 
 structure = get-class-structure phina

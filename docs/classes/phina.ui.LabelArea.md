@@ -102,6 +102,7 @@ super class : [phina.display.Label](phina.display.Label.md)
 * [getOffsetY](#instance_getOffsetY)
 * [getOffsetX](#instance_getOffsetX)
 * [getTextWidthCache](#instance_getTextWidthCache)
+* [spliceLines](#instance_spliceLines)
 * [getLines](#instance_getLines)
 * [prerender](#instance_prerender)
 * [renderFill](#instance_renderFill)
@@ -222,85 +223,69 @@ function () {
     }
 ```
 
+### <a name="instance_spliceLines"></a>spliceLines
+```javascript
+function (lines) {
+      var rowWidth = this.width;
+      var context = this.canvas.context;
+      context.font = this.font;
+
+      var cache = this.getTextWidthCache();
+
+      // update cache
+      this._text.each(function(ch) {
+        if (!cache[ch]) {
+          cache[ch] = context.measureText(ch).width;
+        }
+      });
+      
+      var localLines = [];
+      lines.forEach(function(line) {
+        
+        var str = '';
+        var totalWidth = 0;
+
+        // はみ出ていたら強制的に改行する
+        line.each(function(ch) {
+          var w = cache[ch];
+
+          if ((totalWidth+w) > rowWidth) {
+            localLines.push(str);
+            str = '';
+            totalWidth = 0;
+          }
+
+          str += ch;
+          totalWidth += w;
+        });
+
+        // 残りを push する
+        localLines.push(str);
+
+      });
+      
+
+      return localLines;
+    }
+```
+
 ### <a name="instance_getLines"></a>getLines
 ```javascript
 function () {
       if (this._lineUpdate === false) {
         return this._lines;
       }
-
       this._lineUpdate = false;
-      var lines = this._lines = (this.text + '').split('\n');
 
-      if (this.width < 1) return lines;
-
-      var rowWidth = this.width;
-
-      var context = this.canvas.context;
-      context.font = this.font;
-      //どのへんで改行されるか目星つけとく
-      var pos = rowWidth / context.measureText('あ').width | 0;
-
-      var cache = this.getTextWidthCache();
-      for (var i = lines.length - 1; 0 <= i; --i) {
-        var text = lines[i];
-        if (text === '') {
-          continue;
-        }
-
-        var j = 0;
-        var breakFlag = false;
-        var char;
-        while (true) {
-          //if (rowWidth > (cache[text] || (cache[text] = dummyContext.measureText(text).width))) break;
-
-          var len = text.length;
-          if (pos >= len) pos = len - 1;
-          char = text.substring(0, pos);
-          if (!cache[char]) {
-            cache[char] = context.measureText(char).width;
-          }
-          var textWidth = cache[char];
-
-          if (rowWidth < textWidth) {
-            do {
-              char = text[--pos];
-              if (!cache[char]) {
-                cache[char] = context.measureText(char).width;
-              }
-              textWidth -= cache[char];
-            } while (rowWidth < textWidth);
-
-          } else {
-
-            do {
-              char = text[pos++];
-              if (pos >= len) {
-                breakFlag = true;
-                break;
-              }
-              if (!cache[char]) {
-                cache[char] = context.measureText(char).width;
-              }
-              textWidth += cache[char];
-            } while (rowWidth >= textWidth);
-
-            --pos;
-          }
-          if (breakFlag) {
-            break;
-          }
-          //0 のときは無限ループになるので、1にしとく
-          if (pos === 0) pos = 1;
-
-          lines.splice(i + j, 1, text.substring(0, pos), text = text.substring(pos, len));
-          ++j;
-        }
-
+      var lines = (this.text + '').split('\n');
+      if (this.width < 1) {
+        this._lines = lines;
+      }
+      else {
+        this._lines = this.spliceLines(lines);
       }
 
-      return lines;
-
+      return this._lines;
     }
 ```
 

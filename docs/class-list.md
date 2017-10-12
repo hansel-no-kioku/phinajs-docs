@@ -1,6 +1,6 @@
 [Top](../README.md) >
 
-# phina.js ver.0.2.0 Class List
+# phina.js ver.0.2.1 Class List
 
 * [phina.geom.Vector2](classes/phina.geom.Vector2.md)
 * [phina.geom.Vector3](classes/phina.geom.Vector3.md)
@@ -52,8 +52,8 @@
         * [phina.display.Sprite](classes/phina.display.Sprite.md)
         * [phina.display.Layer](classes/phina.display.Layer.md)
           * [phina.display.CanvasLayer](classes/phina.display.CanvasLayer.md)
+            * [phina.box2d.Box2dLayer](classes/phina.box2d.Box2dLayer.md)
           * [phina.display.ThreeLayer](classes/phina.display.ThreeLayer.md)
-          * [phina.box2d.Box2dLayer](classes/phina.box2d.Box2dLayer.md)
         * [phina.display.CanvasElement](classes/phina.display.CanvasElement.md)
     * [phina.app.Scene](classes/phina.app.Scene.md)
       * [phina.display.DisplayScene](classes/phina.display.DisplayScene.md)
@@ -77,6 +77,7 @@
 * [phina.util.Color](classes/phina.util.Color.md)
 * [phina.util.Random](classes/phina.util.Random.md)
 * [phina.util.QueryString](classes/phina.util.QueryString.md)
+* [phina.util.Ajax](classes/phina.util.Ajax.md)
 * [phina.asset.AssetManager](classes/phina.asset.AssetManager.md)
 * [phina.asset.SoundManager](classes/phina.asset.SoundManager.md)
 * [phina.input.TouchList](classes/phina.input.TouchList.md)

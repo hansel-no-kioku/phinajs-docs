@@ -41,11 +41,11 @@ super class : none
 
 ### <a name="class_play"></a>play
 ```javascript
-function (name) {
+function (name, when, offset, duration) {
         var sound = phina.asset.AssetManager.get('sound', name);
 
         sound.volume = this.getVolume();
-        sound.play();
+        sound.play(when, offset, duration);
 
         return sound;
       }
@@ -117,7 +117,7 @@ function () {
 
 ### <a name="class_playMusic"></a>playMusic
 ```javascript
-function (name, fadeTime, loop) {
+function (name, fadeTime, loop, when, offset, duration) {
         loop = (loop !== undefined) ? loop : true;
 
         if (this.currentMusic) {
@@ -127,7 +127,7 @@ function (name, fadeTime, loop) {
         var music = phina.asset.AssetManager.get('sound', name);
 
         music.setLoop(loop);
-        music.play();
+        music.play(when, offset, duration);
 
         if (fadeTime > 0) {
           var count = 32;

@@ -13,8 +13,6 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
   * message : 'this is phina.js project.'
   * hashtags : 'phina_js,game,javascript'
   * url : 'URL'
-  * width : 640
-  * height : 960
   * fontColor : 'white'
   * backgroundColor : 'hsl(200, 80%, 64%)'
   * backgroundImage : ''
@@ -96,9 +94,8 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 ### <a name="instance_init"></a>init
 ```javascript
 function (params) {
-      this.superInit(params);
-
       params = ({}).$safe(params, phina.game.ResultScene.defaults);
+      this.superInit(params);
 
       var message = params.message.format(params);
 

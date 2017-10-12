@@ -9,8 +9,6 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 ### Class properties
 
 * defaults : 
-  * width : 640
-  * height : 960
   * fontColor : 'white'
   * backgroundColor : 'hsla(0, 0%, 0%, 0.85)'
   * exitType : 'touch'
@@ -88,9 +86,8 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 ### <a name="instance_init"></a>init
 ```javascript
 function (params) {
-      this.superInit(params);
-
       params = ({}).$safe(params, phina.game.PauseScene.defaults);
+      this.superInit(params);
 
       this.backgroundColor = params.backgroundColor;
 

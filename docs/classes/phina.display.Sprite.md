@@ -154,10 +154,10 @@ function (image, width, height) {
       this.width = this._image.domElement.width;
       this.height = this._image.domElement.height;
 
-      this.frameIndex = 0;
-
       if (width) { this.width = width; }
       if (height) { this.height = height; }
+
+      this.frameIndex = 0;
 
       return this;
     }

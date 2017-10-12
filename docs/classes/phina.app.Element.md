@@ -117,7 +117,7 @@ function (index) {
 ### <a name="instance_getChildByName"></a>getChildByName
 ```javascript
 function (name) {
-      // TODO: 
+      // TODO:
     }
 ```
 
@@ -165,7 +165,7 @@ function () {
 
       this.parent.removeChild(this);
       this.parent = null;
-      
+
       return this;
     }
 ```
@@ -198,14 +198,14 @@ function () {
 function (json) {
 
       var createChildren = function(name, data) {
-        // 
+        //
         var args = data.arguments;
         args = (args instanceof Array) ? args : [args];
-        // 
+        //
         var _class = phina.using(data.className);
-        // 
+        //
         var element = _class.apply(null, args);
-        
+
         element.name = name;
         this[name] = element;
 
@@ -233,22 +233,22 @@ function (json) {
 ### <a name="instance_toJSON"></a>toJSON
 ```javascript
 function () {
+      var keys = Object.keys(phina.using(this.className).defaults || {});
+
+      this._hierarchies.forEach(function(e) {
+        var d = e.defaults;
+        if (d) {
+          Object.keys(d).forEach(function(k) {
+            if (keys.indexOf(k) === -1) {
+              keys.push(k);
+            }
+          });
+        }
+      });
+
+      keys.push('name', 'className');
+
       var json = {};
-
-      // this.forIn(function(key, value) {
-      //   if (key[0] === '_') return ;
-      //   json[key] = value;
-      // });
-
-      var keys = [
-        'x', 'y',
-        'rotation',
-        'scaleX', 'scaleY',
-        'originX', 'originY',
-        'className',
-        'name',
-      ];
-
       keys.each(function(key) {
         json[key] = this[key];
       }, this);
@@ -259,8 +259,8 @@ function () {
 
       if (children.length) {
         json.children = {};
-        children.each(function(child) {
-          json.children[child.name] = child;
+        children.each(function(child, i) {
+          json.children[child.name || (child.className + '_' + i)] = child;
         });
       }
 

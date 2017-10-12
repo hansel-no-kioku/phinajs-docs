@@ -1,6 +1,6 @@
 {
   "name": "phinajs-doc",
   "devDependencies": {
-    "phina.js": "^0.2.0"
+    "phina.js": "^0.2.1"
   }
 }

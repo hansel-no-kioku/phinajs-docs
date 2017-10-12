@@ -118,8 +118,7 @@ function (type, listener) {
 ### <a name="instance_has"></a>has
 ```javascript
 function (type) {
-      if (this._listeners[type] === undefined && !this["on" + type]) return false;
-      return true;
+      return (this._listeners[type] !== undefined && this._listeners[type].length !== 0) || !!this['on' + type];
     }
 ```
 
@@ -170,8 +169,7 @@ function (type) {
 ### <a name="instance_hasEventListener"></a>hasEventListener
 ```javascript
 function (type) {
-      if (this._listeners[type] === undefined && !this["on" + type]) return false;
-      return true;
+      return (this._listeners[type] !== undefined && this._listeners[type].length !== 0) || !!this['on' + type];
     }
 ```
 

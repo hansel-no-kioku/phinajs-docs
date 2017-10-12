@@ -9,8 +9,6 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 ### Class properties
 
 * defaults : 
-  * width : 640
-  * height : 960
   * exitType : 'auto'
   * lie : false
 

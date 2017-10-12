@@ -27,6 +27,9 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 ## Methods
 
+### Class methods
+
+* [register](#class_register)
 
 ### Instance methods (own)
 
@@ -48,6 +51,16 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 * [hasEventListener](phina.util.EventDispatcher.md#instance_hasEventListener)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [dispatchEvent](phina.util.EventDispatcher.md#instance_dispatchEvent)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
 * [dispatchEventByType](phina.util.EventDispatcher.md#instance_dispatchEventByType)&ensp;&ensp;(from [phina.util.EventDispatcher](phina.util.EventDispatcher.md))
+
+## Source code of methods (class)
+
+### <a name="class_register"></a>register
+```javascript
+function (key, func) {
+        this.assetLoadFunctions[key] = func;
+        return this;
+      }
+```
 
 
 ## Source code of methods (instance)
@@ -73,7 +86,11 @@ function (params) {
       var flows = [];
 
       var counter = 0;
-
+      var length = 0;
+      params.forIn(function(type, assets) {
+        length += Object.keys(assets).length;
+      });
+      
       params.forIn(function(type, assets) {
         assets.forIn(function(key, value) {
           var func = phina.asset.AssetLoader.assetLoadFunctions[type];
@@ -85,7 +102,7 @@ function (params) {
             self.flare('progress', {
               key: key,
               asset: asset,
-              progress: (++counter/flows.length),
+              progress: (++counter/length),
             });
           });
           flows.push(flow);

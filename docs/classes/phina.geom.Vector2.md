@@ -38,6 +38,7 @@ super class : none
 * [manhattanDistance](#class_manhattanDistance)
 * [normal](#class_normal)
 * [reflect](#class_reflect)
+* [wall](#class_wall)
 * [lerp](#class_lerp)
 * [slerp](#class_slerp)
 * [random](#class_random)
@@ -181,13 +182,22 @@ function (v, normal) {
       }
 ```
 
+### <a name="class_wall"></a>wall
+```javascript
+function (v, normal) {
+        var len = phina.geom.Vector2.dot(v, normal);
+        var temp= phina.geom.Vector2.mul(normal, len);
+        
+        return phina.geom.Vector2.sub(v, temp);
+      }
+```
+
 ### <a name="class_lerp"></a>lerp
 ```javascript
-function (lhs, rhs, t) {
-        // TODO: 
+function (a, b, t) {
         return phina.geom.Vector2(
-          lhs.x + (rhs.x-lhs.x)*t,
-          lhs.y + (rhs.y-lhs.y)*t
+          a.x + (b.x-a.x)*t,
+          a.y + (b.y-a.y)*t
         );
       }
 ```

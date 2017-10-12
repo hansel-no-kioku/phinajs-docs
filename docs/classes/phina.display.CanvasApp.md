@@ -92,6 +92,9 @@ function (options) {
           document.body.appendChild(options.domElement);
         }
       }
+      if(!options.runner && phina.isAndroid()) {
+        options.runner = phina.global.requestAnimationFrame;
+      }
       this.superInit(options);
 
 
@@ -127,7 +130,9 @@ function (options) {
       // pushScene, popScene 対策
       this.on('push', function() {
         // onenter 対策で描画しておく
-        this._draw();
+        if (this.currentScene.canvas) {
+          this._draw();
+        }
       });
     }
 ```

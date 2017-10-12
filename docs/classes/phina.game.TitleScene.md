@@ -11,8 +11,6 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 * defaults : 
   * title : 'phina.js games'
   * message : ''
-  * width : 640
-  * height : 960
   * fontColor : 'white'
   * backgroundColor : 'hsl(200, 80%, 64%)'
   * backgroundImage : ''
@@ -92,9 +90,8 @@ super class : [phina.display.DisplayScene](phina.display.DisplayScene.md)
 ### <a name="instance_init"></a>init
 ```javascript
 function (params) {
-      this.superInit(params);
-
       params = ({}).$safe(params, phina.game.TitleScene.defaults);
+      this.superInit(params);
 
       this.backgroundColor = params.backgroundColor;
 
