@@ -9,7 +9,7 @@ require! {
 }
 
 # fix phina.VERSION
-phina.VERSION = \0.2.1
+# phina.VERSION = \0.2.1
 
 dest = \./docs/class-list.md
 

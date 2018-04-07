@@ -1,6 +1,6 @@
 [Top](../README.md) >
 
-# phina.js ver.0.2.1 Class List
+# phina.js ver.0.2.2 Class List
 
 * [phina.geom.Vector2](classes/phina.geom.Vector2.md)
 * [phina.geom.Vector3](classes/phina.geom.Vector3.md)
