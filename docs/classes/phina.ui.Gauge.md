@@ -187,7 +187,7 @@ function () {
 ### <a name="instance_setValue"></a>setValue
 ```javascript
 function (value) {
-      value = Math.clamp(value, 0, this._maxValue);
+      value = Math.clamp(value, 0, this.maxValue);
 
       // end when now value equal value of argument
       if (this.value === value) return ;

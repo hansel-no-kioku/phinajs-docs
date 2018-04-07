@@ -46,6 +46,7 @@ super class : [phina.display.CanvasApp](phina.display.CanvasApp.md)
 
 * [fitScreen](phina.display.CanvasApp.md#instance_fitScreen)&ensp;&ensp;(from [phina.display.CanvasApp](phina.display.CanvasApp.md))
 * [run](phina.app.BaseApp.md#instance_run)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* [kill](phina.app.BaseApp.md#instance_kill)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * [replaceScene](phina.app.BaseApp.md#instance_replaceScene)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * [pushScene](phina.app.BaseApp.md#instance_pushScene)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * [popScene](phina.app.BaseApp.md#instance_popScene)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))

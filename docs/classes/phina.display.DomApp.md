@@ -43,6 +43,7 @@ super class : [phina.app.BaseApp](phina.app.BaseApp.md)
 ### Instance methods (inherited)
 
 * [run](phina.app.BaseApp.md#instance_run)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
+* [kill](phina.app.BaseApp.md#instance_kill)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * [replaceScene](phina.app.BaseApp.md#instance_replaceScene)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * [pushScene](phina.app.BaseApp.md#instance_pushScene)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))
 * [popScene](phina.app.BaseApp.md#instance_popScene)&ensp;&ensp;(from [phina.app.BaseApp](phina.app.BaseApp.md))

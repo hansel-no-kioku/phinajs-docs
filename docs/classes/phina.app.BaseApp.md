@@ -30,6 +30,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 
 * [init](#instance_init)
 * [run](#instance_run)
+* [kill](#instance_kill)
 * [replaceScene](#instance_replaceScene)
 * [pushScene](#instance_pushScene)
 * [popScene](#instance_popScene)
@@ -76,13 +77,22 @@ function () {
 ```javascript
 function () {
       var self = this;
-
-      this.ticker.tick(function() {
+      this._loopCaller = function() {
         self._loop();
-      });
+      };
+      this.ticker.tick(this._loopCaller);
 
       this.ticker.start();
 
+      return this;
+    }
+```
+
+### <a name="instance_kill"></a>kill
+```javascript
+function () {
+      this.ticker.stop();
+      this.ticker.untick(this._loopCaller);
       return this;
     }
 ```

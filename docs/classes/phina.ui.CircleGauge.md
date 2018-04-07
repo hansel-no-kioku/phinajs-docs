@@ -172,7 +172,7 @@ function (canvas) {
       var end = (Math.PI*2)*rate;
       this.startAngle = 0;
       this.endAngle = end;
-      
+
       this.canvas.rotate(-Math.PI*0.5);
       this.canvas.scale(1, -1);
     }

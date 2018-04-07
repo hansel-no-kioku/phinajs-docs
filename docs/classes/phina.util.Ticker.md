@@ -13,6 +13,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 * frame : Number
 * deltaTime : Number
 * elapsedTime : Number
+* isPlaying : Boolean
 * fps : Number
 
 
@@ -27,6 +28,7 @@ super class : [phina.util.EventDispatcher](phina.util.EventDispatcher.md)
 * [runner](#instance_runner)
 * [init](#instance_init)
 * [tick](#instance_tick)
+* [untick](#instance_untick)
 * [run](#instance_run)
 * [start](#instance_start)
 * [resume](#instance_resume)
@@ -77,6 +79,7 @@ function () {
       this.frame = 0;
       this.deltaTime = 0;
       this.elapsedTime = 0;
+      this.isPlaying = true;
       this.runner = phina.util.Ticker.runner;
     }
 ```
@@ -85,6 +88,13 @@ function () {
 ```javascript
 function (func) {
       this.on('tick', func);
+    }
+```
+
+### <a name="instance_untick"></a>untick
+```javascript
+function (func) {
+      this.off('tick', func);
     }
 ```
 
@@ -118,12 +128,13 @@ function () {
 ```javascript
 function () {
       var self = this;
-
+      this.isPlaying = true;
       this.startTime = this.currentTime = (new Date()).getTime();
-      var runner = self.runner;
       var fn = function() {
-        var delay = self.run();
-        runner(fn, delay);
+        if (self.isPlaying) {
+          var delay = self.run();
+          self.runner(fn, delay);
+        }
       };
       fn();
 
@@ -141,7 +152,8 @@ function () {
 ### <a name="instance_stop"></a>stop
 ```javascript
 function () {
-      // TODO: 
+      this.isPlaying = false;
+      return this;
     }
 ```
 

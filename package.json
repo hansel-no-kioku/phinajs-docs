@@ -7,7 +7,7 @@
     "livescript": "^1.5.0",
     "npm-run-all": "^4.0.0",
     "object.entries": "^1.0.4",
-    "phina.js": "github:phinajs/phina.js#v0.2.1",
+    "phina.js": "github:phinajs/phina.js#v0.2.2",
     "rimraf": "^2.5.4",
     "write": "^0.3.2"
   },
