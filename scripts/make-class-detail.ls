@@ -6,7 +6,7 @@ require! {
   \./lib/phina-class : {get-class-list}
   \./lib/get-class-detail
   \./lib/write-detail
-  \../bower_components/phina.js   # Use Object.prototype.accessor
+  \../node_modules/phina.js/build/phina.js   # Use Object.prototype.accessor
 }
 
 # String -> String

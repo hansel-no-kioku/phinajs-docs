@@ -5,7 +5,7 @@ require! {
   \prelude-ls : {fold, obj-to-pairs}
   write
   \./lib/phina-class : {get-class-structure}
-  \../bower_components/phina.js   # Use Object.prototype.accessor
+  \../node_modules/phina.js/build/phina.js  # Use Object.prototype.accessor
 }
 
 # fix phina.VERSION
